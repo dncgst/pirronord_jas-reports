@@ -1,0 +1,209 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Exploratory Data Analysis: vertical distribution"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Vertical distribution of finds
+
+Asses for the normal distribution of the z coordinate before extruding it from subsequent point pattern analyses. We are interested in proceeding under the assumption that the data are 'nearly' normally distribuited on the third coordinate. Strongly (right) skewed distributions would occur in cases of non-uniform / non-simmetric / inhomogeneous vertical distribution of finds, thus requiring the analysis to account for a z covariate effect.
+
+Many processes can be well approximated by the normal distribution. Testing the appropriateness of the normal assumption is a key step in many data analyses. 
+
+```{r}
+# Vertical distribution of 'sampled' finds in SU's C and D 
+
+## Summary statistics
+summary(Xc$coords.x3)
+
+## Mean & Standard deviation
+mean <- mean(Xc$coords.x3)
+sd <- sd(Xc$coords.x3)
+
+## Histogram
+xlimC <- c(-3, 0)
+xlimD <- c(-3.8, -.8)
+hist(Xc$coords.x3, nclass=15, prob=TRUE, xlim=xlimC, xlab="z(meter)")
+hist(Xd$coords.x3, nclass=15, prob=TRUE, xlim=xlimD, ylim=c(0,1.5), xlab="z(meter)")
+
+## Fitting normal distribution with mean/sd of the data sample
+curve(dnorm(x, mean(Xc$coords.x3), sd(Xc$coords.x3)), col="grey", lwd=2, add=TRUE)
+curve(dnorm(x, mean=-1.535207114, sd=0.270189381), col="red", lwd=2, add=TRUE)
+curve(dnorm(x, mean(Xd$coords.x3), sd(Xd$coords.x3)), col="grey", lwd=2, add=TRUE)
+curve(dnorm(x, mean=-2.352142361, sd=0.334064143), col="red", lwd=2, add=TRUE)
+
+### Maximum-likelihood fitting of univariate distributions
+library(MASS)
+fitdistr(Xc$coords.x3, "normal")
+fitdistr(Xd$coords.x3, "normal")
+
+#      mean         sd 
+#-1.5352071  0.2701894
+#fit <- rnorm(n=length(Xc$coords.x3), m=-1.5352071, sd=0.2701894)
+#lines(density(fit))
+
+shapiro.test(Xc$coords.x3)
+shapiro.test(Xd$coords.x3)
+
+ks.test(Xc$coords.x3, "pnorm")
+ks.test(Xd$coords.x3, "pnorm")
+
+## Histograms by type
+hist(Xc$coords.x3[which(Xc$type %in% c("Bone","Tooth"))], nclass=15, prob=TRUE, xlim=xlimC, xlab="z(meter)")
+hist(Xc$coords.x3[which(Xc$type == "Lithic")], nclass=15, prob=TRUE, xlim=xlimC, xlab="z(meter)")
+hist(Xc$coords.x3[which(Xc$type == "Micro")], nclass=5, prob=TRUE, xlim=xlimC, xlab="z(meter)")
+
+hist(Xd$coords.x3[which(Xd$type %in% c("Bone","Tooth"))], nclass=15, prob=TRUE, xlim=xlimD, xlab="z(meter)")
+hist(Xd$coords.x3[which(Xd$type == "Lithic")], nclass=15, prob=TRUE, xlim=xlimD, xlab="z(meter)")
+hist(Xd$coords.x3[which(Xd$type == "Micro")], nclass=10, prob=TRUE, xlim=xlimD, xlab="z(meter)")
+
+## Density (kernel default:"gaussian"; bandwidth default:"nrd0")
+### Bandwidth selectors for Gaussian kernels
+bw.nrd0(Xc$coords.x3) # implements a rule-of-thumb for choosing the bandwidth of a Gaussian kernel density estimator. It defaults to 0.9 times the minimum of the standard deviation
+bw.nrd(Xc$coords.x3) # is the more common variation given by Scott (1992), using factor 1.06
+bw.bcv(Xc$coords.x3) #  implement biased cross-validation
+
+lines(density(Xc$coords.x3, bw="nrd"), col="grey", lwd=1)
+lines(density(Xc$coords.x3[which(Xc$type == "Bone")], bw="nrd"), col="#f8766d", lwd=1)
+lines(density(Xc$coords.x3[which(Xc$type == "Tooth")], bw="nrd"), col="#f564e3", lwd=1)
+lines(density(Xc$coords.x3[which(Xc$type == "Lithic")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(Xc$coords.x3[which(Xc$type == "Lithic")]), col="#00ba38", lwd=1, lty=2)
+lines(density(Xc$coords.x3[which(Xc$type == "Micro")], bw="nrd0"), col="#00bfc4", lwd=1)
+abline(v=mean(Xc$coords.x3[which(Xc$type == "Micro")]), col="#00bfc4", lwd=1, lty=2)
+
+lines(density(Xd$coords.x3, bw="nrd"), col="grey", lwd=1)
+lines(density(Xd$coords.x3[which(Xd$type == "Bone")], bw="nrd"), col="#f8766d", lwd=1)
+lines(density(Xd$coords.x3[which(Xd$type == "Tooth")], bw="nrd"), col="#f564e3", lwd=1)
+lines(density(Xd$coords.x3[which(Xd$type == "Lithic")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(Xd$coords.x3[which(Xd$type == "Lithic")]), col="#00ba38", lwd=1, lty=2)
+lines(density(Xd$coords.x3[which(Xd$type == "Micro")], bw="nrd0"), col="#00bfc4", lwd=1)
+abline(v=mean(Xd$coords.x3[which(Xd$type == "Micro")]), col="#00bfc4", lwd=1, lty=2)
+
+## QQ plot
+qqnorm(Xc$coords.x3); qqline(Xc$coords.x3, col=2)
+qqnorm(Xc$coords.x3[which(Xc$type == "Lithic")]); qqline(Xc$coords.x3[which(Xc$type == "Lithic")], col=2)
+
+qqnorm(Xd$coords.x3); qqline(Xd$coords.x3, col=2)
+qqnorm(Xd$coords.x3[which(Xd$type == "Lithic")]); qqline(Xd$coords.x3[which(Xd$type == "Lithic")], col=2)
+
+## Boxplot
+boxplot(Xc$coords.x3)
+boxplot(Xd$coords.x3)
+```
+
+### Vertical distribution of patinae on the lithic assemblage
+
+```{r}
+# Subset data (sample population of lithics)
+spL <- spL[which(spL$layer %in% c("C", "D")),]
+spL <- spL[complete.cases(spL$patina),]
+
+summary(spL)
+
+Lc <- spL[which(spL$layer == "C"),]
+Ld <- spL[which(spL$layer == "D"),]
+
+# Vertical distribution of taphonomic features (patinae) on the 'sampled' lithic assemblage
+hist(spL$coords.x3, nclass=25, prob=TRUE, xlim=c(-3.5, 0), main="b", xlab="z(meter)")
+lines(density(spL$coords.x3[which(spL$patina == "Absent")], bw="nrd"), col="#f8766d", lwd=1)
+abline(v=mean(spL$coords.x3[which(spL$patina == "Absent")]), col="#f8766d", lwd=1, lty=2)
+lines(density(spL$coords.x3[which(spL$patina == "Fe-Mn spotted")], bw="nrd"), col="#619cff", lwd=1)
+abline(v=mean(spL$coords.x3[which(spL$patina == "Fe-Mn spotted")]), col="#619cff", lwd=1, lty=2)
+lines(density(spL$coords.x3[which(spL$patina == "Fe-Mn covering")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(spL$coords.x3[which(spL$patina == "Fe-Mn covering")]), col="#00ba38", lwd=1, lty=2)
+legend(x="topright", c("Absent","Fe-Mn spotted","Fe-Mn covering"), lty=1, lwd=1, col=c("#f8766d","#619cff","#00ba38"))
+
+hist(Xc$coords.x3[which(Xc$type == "Lithic")], nclass=15, prob=TRUE, xlim=xlimC, xlab="z(meter)")
+lines(density(Lc$coords.x3[which(Lc$patina == "Absent")], bw="nrd"), col="#f8766d", lwd=1)
+abline(v=mean(Lc$coords.x3[which(Lc$patina == "Absent")]), col="#f8766d", lwd=1, lty=2)
+lines(density(Lc$coords.x3[which(Lc$patina == "Fe-Mn covering")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(Lc$coords.x3[which(Lc$patina == "Fe-Mn covering")]), col="#00ba38", lwd=1, lty=2)
+lines(density(Lc$coords.x3[which(Lc$patina == "Fe-Mn spotted")], bw="nrd"), col="#619cff", lwd=1)
+abline(v=mean(Lc$coords.x3[which(Lc$patina == "Fe-Mn spotted")]), col="#619cff", lwd=1, lty=2)
+legend(x="topright", c("Absent","Fe-Mn covering","Fe-Mn spotted"), lty=1, lwd=1, col=c("#f8766d","#00ba38","#619cff"))
+
+hist(Xd$coords.x3[which(Xd$type == "Lithic")], nclass=15, prob=TRUE, xlim=xlimD, xlab="z(meter)")
+lines(density(Ld$coords.x3[which(Ld$patina == "Absent")], bw="nrd"), col="#f8766d", lwd=1)
+abline(v=mean(Ld$coords.x3[which(Ld$patina == "Absent")]), col="#f8766d", lwd=1, lty=2)
+lines(density(Ld$coords.x3[which(Ld$patina == "Fe-Mn covering")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(Ld$coords.x3[which(Ld$patina == "Fe-Mn covering")]), col="#00ba38", lwd=1, lty=2)
+lines(density(Ld$coords.x3[which(Ld$patina == "Fe-Mn spotted")], bw="nrd"), col="#619cff", lwd=1)
+abline(v=mean(Ld$coords.x3[which(Ld$patina == "Fe-Mn spotted")]), col="#619cff", lwd=1, lty=2)
+legend(x="topright", c("Absent","Fe-Mn covering","Fe-Mn spotted"), lty=1, lwd=1, col=c("#f8766d","#00ba38","#619cff"))
+```
+
+            patina  C
+ Absent        :17  50%
+ Brown         : 0  
+ Fe-Mn covering: 4  
+ Fe-Mn spotted :10  41%
+ White         : 2  6%
+ NA's          : 1  3%
+
+            patina  D
+ Absent        :40  48%
+ Brown         : 1  1%
+ Fe-Mn covering:14  
+ Fe-Mn spotted :24  45%
+ White         : 2  2%
+ NA's          : 3  4%
+
+
+### Vertical distribution of oxides on the faunal assemblage
+
+```{r}
+# Subset data (sample population of analized fossils)
+Fc <- spF[which(spF$layer == "C"),]
+Fc <- Fc[complete.cases(Fc$oxid),]
+
+str(Fc)
+summary(Fc)
+
+levels(Fc$oxid)
+levels(Fc$oxid) <- c("Low","Low","Low","Medium","Medium","Medium","High","High")
+
+levels(Fc$abrasion)
+levels(Fc$abrasion) <- c("Low","Low","Medium","High","High")
+
+par(mfrow=c(1,3), cex=1)
+
+# Vertical distribution of taphonomic features (oxides) on the 'sampled' faunal assemblage
+hist(Fc$coords.x3, nclass=10, prob=TRUE, xlim=xlimC, ylim=c(0, 3), xlab="z(meter)", main="oxid")
+lines(density(Fc$coords.x3[which(Fc$oxid == "Low")], bw="nrd"), col="#f8766d", lwd=1)
+#abline(v=mean(Fc$coords.x3[which(Fc$oxid == "Low")]), col="#f8766d", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$oxid == "Medium")], bw="nrd"), col="#619cff", lwd=1)
+#abline(v=mean(Fc$coords.x3[which(Fc$oxid == "Medium")]), col="#619cff", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$oxid == "High")], bw="nrd"), col="#00ba38", lwd=1)
+#abline(v=mean(Fc$coords.x3[which(Fc$oxid == "High")]), col="#00ba38", lwd=1, lty=2)
+#legend(x="topright", c("Low","Medium","High"), lty=1, lwd=1, col=c("#f8766d","#619cff","#00ba38"))
+
+# Vertical distribution of taphonomic features (abrasion) on the 'sampled' faunal assemblage
+hist(Fc$coords.x3, nclass=10, prob=TRUE, xlim=xlimC, ylim=c(0, 4), xlab="z(meter)", main="abrasion")
+lines(density(Fc$coords.x3[which(Fc$abrasion == "Low")], bw="nrd"), col="#f8766d", lwd=1)
+#abline(v=mean(Fc$coords.x3[which(Fc$abrasion == "Low")]), col="#f8766d", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$abrasion == "Medium")], bw="nrd"), col="#619cff", lwd=1)
+#abline(v=mean(Fc$coords.x3[which(Fc$abrasion == "Medium")]), col="#619cff", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$abrasion == "High")], bw="nrd"), col="#00ba38", lwd=1)
+#abline(v=mean(Fc$coords.x3[which(Fc$abrasion == "High")]), col="#00ba38", lwd=1, lty=2)
+#legend(x="topright", c("Low","Medium","High"), lty=1, lwd=1, col=c("#f8766d","#619cff","#00ba38"))
+
+# Vertical distribution of taphorecord on the 'sampled' faunal assemblage
+hist(Fc$coords.x3, nclass=10, prob=TRUE, xlim=xlimC, ylim=c(0, 5), xlab="z(meter)", main="TR")
+lines(density(Fc$coords.x3[which(Fc$taphorecord == "3")], bw="nrd"), col="#f8766d", lwd=1)
+#abline(v=mean(Fc$coords.x3[which(Fc$taphorecord == "3")]), col="#f8766d", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$taphorecord == "2")], bw="nrd"), col="#619cff", lwd=1)
+#abline(v=mean(Fc$coords.x3[which(Fc$taphorecord == "2")]), col="#619cff", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$taphorecord == "1")], bw="nrd"), col="#00ba38", lwd=1)
+#abline(v=mean(Fc$coords.x3[which(Fc$taphorecord == "1")]), col="#00ba38", lwd=1, lty=2)
+#legend(x="topright", c("3","2","1"), lty=1, lwd=1, col=c("#f8766d","#619cff","#00ba38"))
+```
+
+  oxid
+   Low Medium   High
+    19     43     73

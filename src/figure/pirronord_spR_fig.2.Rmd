@@ -1,0 +1,63 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Figure 2"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+## Figures
+
+Load required library
+
+```{r}
+library(ggplot2)
+```
+
+Figures
+
+```{r, echo=FALSE}
+# Getting and cleaning data
+X <- db_lithic
+str(X)
+
+## Replace values
+### X$integrity <- replace(X$integrity, X$integrity == "Fragment, distal", "Fragment")
+X$integrity <- gsub("Fragment, \\w+", "Fragment", X$integrity)
+X$integrity <- gsub("Fragment side", "Fragment", X$integrity)
+
+# a) Frequency of patinae on the lithic assemblage
+foo <- X[complete.cases(X$patina),]
+fig2a <- ggplot(foo, aes(x=patina, color=patina)) + geom_bar(fill="grey", show.legend=FALSE) + facet_grid(layer ~ .) + ggtitle("a") + xlab("Patina") + ylab("Count")
+fig2a
+
+# b) Distribution of patinae on the lithic raw materials
+foo <- foo[complete.cases(foo$raw_material_type),]
+fig2b <- ggplot(foo, aes(x=patina, y=raw_material_type, color=patina)) + geom_jitter(show.legend=FALSE) + ggtitle("b") + xlab("Patina") + ylab("Raw material")
+fig2b
+
+# c) Frequency of fractures on the lithic assemblage
+bar <- X[complete.cases(X$integrity),]
+fig2c <- ggplot(bar, aes(x=integrity, color=integrity)) + geom_bar(fill="grey", show.legend=FALSE) + facet_grid(layer ~ .) + ggtitle("c") + xlab("Integrity") + ylab("Count")
+fig2c
+
+# d) Lithic artifact dimensions
+fig2d <- ggplot(bar, aes(x=length, y=width, color=integrity)) + geom_point(show.legend=TRUE) + ggtitle("d") + xlab("Length (mm)") + ylab("Width (mm)")
+fig2d
+```
+
+## Multiplot
+
+```{r, echo=FALSE}
+# Multiplot
+##http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_(ggplot2)/
+##http://stackoverflow.com/questions/8615530/place-title-of-multiplot-panel-with-ggplot2
+setEPS()
+postscript("./doc/artwork/Fig2.eps", width=16, height=10)
+multiplot(fig2a, fig2c, fig2b, fig2d, cols=2)
+dev.off()
+
+pdf("./doc/artwork/Fig2.pdf", width=16, height=10)
+multiplot(fig2a, fig2c, fig2b, fig2d, cols=2)
+dev.off()
+```

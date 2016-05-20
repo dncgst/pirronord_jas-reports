@@ -1,0 +1,71 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Figure 3"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r, echo=FALSE}
+def.par <- par(no.readonly = TRUE)
+
+setEPS()
+postscript("./doc/artwork/Fig3.eps", width=10, height=10)
+
+pdf("./doc/artwork/Fig3.pdf", width=10, height=10)
+
+nf <- layout(matrix(c(1,2,3,4,5,6),3,2, byrow=FALSE),  height = c(1,2,2))
+layout.show(nf)
+
+# Vertical distribution SU C
+## a) Histogram + Boxplot
+par(mar=c(5.1, 4.1, 1.1, 2.1))
+
+boxplot(Xc$coords.x3, horizontal=TRUE, outline=TRUE, frame=FALSE, ylim=xlimC, main="a")
+
+#xlimC <- c(-3, 0)
+hist(Xc$coords.x3, nclass=15, prob=TRUE, xlim=xlimC, xlab="z(meter)", main="")
+curve(dnorm(x, mean=-1.535207114, sd=0.270189381), col="red", lwd=1, add=TRUE)
+#lines(density(Xc$coords.x3, bw="nrd"), col="grey", lwd=1)
+#lines(density(Xc$coords.x3[which(Xc$type == "Bone")], bw="nrd"), col="#f8766d", lwd=1)
+#lines(density(Xc$coords.x3[which(Xc$type == "Tooth")], bw="nrd"), col="#f564e3", lwd=1)
+lines(density(Xc$coords.x3[which(Xc$type == "Lithic")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(Xc$coords.x3[which(Xc$type == "Lithic")]), col="#00ba38", lwd=1, lty=2)
+lines(density(Xc$coords.x3[which(Xc$type == "Micro")], bw="nrd0"), col="#00bfc4", lwd=1)
+abline(v=mean(Xc$coords.x3[which(Xc$type == "Micro")]), col="#00bfc4", lwd=1, lty=2)
+legend(x="topright", "Normal fit", lty=1, lwd=1, col="red")
+
+## b) QQ plot
+qqnorm(Xc$coords.x3, main="b"); qqline(Xc$coords.x3, col=2)
+
+## Scarplot xz
+#plot(Xc$coords.x1, Xc$coords.x3, xlab="x(meter)", ylab="z(meter)")
+
+# Vertical distribution SU D
+## c) Histogram + Boxplot
+par(mar=c(5.1, 4.1, 1.1, 2.1))
+
+boxplot(Xd$coords.x3, horizontal=TRUE, outline=TRUE, frame=FALSE, ylim=xlimD, main="c")
+
+#xlimD <- c(-3.8, .8)
+hist(Xd$coords.x3, nclass=15, prob=TRUE, xlim=xlimD, ylim=c(0,1.5), xlab="z(meter)", main="")
+curve(dnorm(x, mean=-2.343235335, sd=0.333747760), col="red", lwd=1, add=TRUE)
+#lines(density(Xd$coords.x3, bw="nrd"), col="grey", lwd=1)
+#lines(density(Xd$coords.x3[which(Xd$type == "Bone")], bw="nrd"), col="#f8766d", lwd=1)
+#lines(density(Xd$coords.x3[which(Xd$type == "Tooth")], bw="nrd"), col="#f564e3", lwd=1)
+lines(density(Xd$coords.x3[which(Xd$type == "Lithic")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(Xd$coords.x3[which(Xd$type == "Lithic")]), col="#00ba38", lwd=1, lty=2)
+lines(density(Xd$coords.x3[which(Xd$type == "Micro")], bw="nrd0"), col="#00bfc4", lwd=1)
+abline(v=mean(Xd$coords.x3[which(Xd$type == "Micro")]), col="#00bfc4", lwd=1, lty=2)
+legend(x="topright", c("Lithic","A.ruffoi"), lty=1, lwd=1, col=c("#00ba38","#00bfc4"))
+
+## d) QQ plot
+qqnorm(Xd$coords.x3, main="d"); qqline(Xd$coords.x3, col=2)
+
+## Scarplot xz
+#plot(Xc$coords.x1, Xc$coords.x3, xlab="x(meter)", ylab="z(meter)")
+
+dev.off()
+
+par(def.par)
+```

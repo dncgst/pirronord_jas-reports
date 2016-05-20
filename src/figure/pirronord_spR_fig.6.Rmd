@@ -1,0 +1,43 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Figure 6"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r, echo=FALSE}
+setEPS()
+postscript("./doc/artwork/Fig6.eps", width=15, height=10)
+
+pdf("./doc/artwork/Fig6.pdf", width=15, height=10)
+
+par(mfrow=c(2,3), cex=1)
+par(pty="s")
+
+# a)
+plot(pval.c, axes=TRUE, main="a")
+
+# b)
+#Kc <- envelope(unmark(record.c), Kest, nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Kc, legend=FALSE, main="b")
+
+# c)
+#Fc <- envelope(unmark(record.c), Fest, nsim=199, rank=1, global=FALSE, correction="km")
+plot(Fc, legend=FALSE, main="c")
+
+# d)
+plot(pval.d, axes=TRUE, main="d")
+
+# e)
+#par(pty="s")
+#Kd <- envelope(unmark(record.d), Kest, nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Kd, legend=FALSE, main="e")
+
+#Fd <- envelope(unmark(record.d), Fest, nsim=199, rank=1, global=FALSE, correction="km")
+plot(Fd, legend=FALSE, main="f")
+
+dev.off()
+
+par(mfrow=c(1,1))
+```

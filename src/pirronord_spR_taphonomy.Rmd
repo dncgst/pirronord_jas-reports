@@ -1,0 +1,76 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Point pattern analysis: post-depositional processes"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+# Load libraries for point pattern analysis
+# http://cran.r-project.org/web/views/Spatial.html
+library(spatstat)
+```
+
+Research questions:
+
+Strategy for analysis of multitype point pattern: conditional distribution P(M|X): regard the locations X as fixed or given, and study only the types M attached to these locations.
+
+> In a conditional analysis [of a spatial case-control study] the [...] locations are treated as fixed covariates, and the desease status is treated as a random variable. [...] The simplest null model is that the desease status of each person is random, independently of other people, with a constant risk of desease (called 'random labelling')
+
+## Distribution of patinae on the lithic assemblage
+
+```{r}
+# Getting and cleaning data
+summary(Lc)
+
+Xp.d <- as(Ld[,3], "ppp")
+Xp.d$window <- d
+unitname(Xp.d) <- "meter"
+marks(Xp.d)
+Xp.d <- subset(Xp.d, Xp.d$marks != "Brown")
+Xp.d <- subset(Xp.d, Xp.d$marks != "White")
+Xp.d$marks <- droplevels(Xp.d$marks)
+```
+
+```{r}
+# Summary
+plot(Xp.c)
+summary(Xp.c)
+```
+
+```{r}
+# Exploratory analysis of intensity
+plot(density(split(Xp.c), sigma=bw.ppl(Xp.c), edge=TRUE, diggle=TRUE))
+plot(density(split(Xp.c), sigma=bw.diggle(Xp.c), edge=TRUE, diggle=TRUE))
+ProbU <- relrisk(Xp.c); plot(ProbU)
+```
+
+```{r}
+# Correlation and spacing (Homogeneous process)
+```
+
+```{r}
+# Test of randomness and independence
+levels(Xp.c$marks) <- c("Absent","Fe-Mn","Fe-Mn")
+
+E <- envelope(Xp.c, owin=c, fun=Kdif, i="Absent", nsim=19, simulate=expression(rlabel(Xp.c))); plot(E)
+```
+
+## Distribution of oxides on the lithic and the faunal assemblage
+
+```{r}
+summary(Fc)
+
+Xo.c <- as(Fc[,c(3,4)], "ppp")
+Xo.c$window <- c
+unitname(Xo.c) <- "meter"
+marks(Xo.c)
+Xp.d <- subset(Xp.d, Xp.d$marks != "Brown")
+Xp.d$marks <- droplevels(Xp.d$marks)
+```
+

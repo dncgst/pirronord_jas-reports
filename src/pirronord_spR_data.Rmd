@@ -1,0 +1,231 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Getting and cleaning data"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Reading data: RPostgreSQL connection and data.frame reading
+
+```{r, echo=FALSE}
+# Load required library
+# https://code.google.com/p/rpostgresql/
+library(RPostgreSQL)
+```
+
+Set first a connection with the PostgreSQL database
+
+```{r}
+# Establish connection to PoststgreSQL using RPostgreSQL
+drv <- dbDriver("PostgreSQL")
+con <- dbConnect(drv, dbname="pirronord",host="localhost",port=5432,user="dncgst",password="gnewpost")
+# Check connection
+dbListConnections(drv)
+dbGetInfo(drv)
+summary(con)
+```
+
+List tables of the database and the columns of a specific table
+
+```{r}
+# List tables
+dbListTables(con)
+# List column of a table
+dbListFields(con,"record")
+```
+
+List views of the database
+
+```{r}
+# List views
+# https://groups.google.com/d/topic/rpostgresql-dev/NgjFsIk8pCY/discussion
+# dbSendQuery(con, statement, ...) submits one statement to the database
+## Submits a statement
+rs <- dbSendQuery(con, "SELECT viewname from pg_catalog.pg_views where viewowner = 'dncgst'")
+## Fetch all elements from the result set
+fetch(rs,n=-1)
+## Or submit and execute the query directly
+dbGetQuery(con, "SELECT viewname from pg_catalog.pg_views where viewowner = 'dncgst'")
+```
+
+Read a PostgreSQL table, or a subset of it, as a data.frame object (no spatial attribute). The geom is read as character!
+
+```{r}
+# Check if table exists. It works only with tables, no views!
+dbExistsTable(con, "record")
+# Read the complete db table in a data.frame
+db_record <- dbReadTable(con,"record")
+# Dataframe structure
+class(db_record)
+str(db_record)
+```
+
+Read in a data.frame from a query. It is a workaround to read a view
+
+```{r}
+# Read table lithic joining table record
+db_lithic <- dbGetQuery(con, "SELECT DISTINCT ON (record.code) lithic.id, lithic.code, record.layer, record.us,	record.q,	record.n,	record.type, lithic.lithic_object, lithic.raw_material, lithic.raw_material_type, lithic.raw_material_code,	lithic.integrity,	lithic.length, lithic.width, lithic.thickness,	lithic.cortex, lithic.neocortex, lithic.patina, lithic.fracture, lithic.edge_ridge_rounding, record.date FROM public.lithic LEFT JOIN public.record ON lithic.code = record.code")
+```
+
+Close the database connection, once the required table are read
+
+```{r}
+# Close PostgreSQL connection 
+dbDisconnect(con)
+dbUnloadDriver(drv)
+```
+
+## Reading spatial data: readOGR a PostgreSQL/PostGIS relation in a Spatial*Dataframe
+
+```{r, echo=FALSE}
+# Load required library
+# http://cran.r-project.org/web/packages/rgdal/
+library(sp)
+library(rgdal)
+library(maptools)
+```
+
+Read a PostgreSQL/PostGIS view with _point_ geom using readOGR
+
+```{r}
+ogrDrivers()
+# List the layers
+ogrListLayers(dsn="PG:host=localhost port=5432 dbname=pirronord")
+# Read the db view in a dataframe of class SpatialPointsDataframe
+## view_sp_record: all coordinated records
+sp_record <- readOGR(dsn="PG:host=localhost port=5432 dbname=pirronord", "view_sp_record")
+class(sp_record)
+bbox(sp_record)
+proj4string(sp_record)
+coordinates(sp_record)
+names(sp_record)
+str(sp_record)
+## view_sp_lithic: all coordinated lithics with taphonomic attributes
+sp_lithic <- readOGR(dsn="PG:host=localhost port=5432 dbname=pirronord", "view_sp_lithic")
+spL <- sp_lithic[,c(1,3,17)]
+## view_sp_fauna: all coordinated fossils with taphonomic attributes
+sp_fauna <- readOGR(dsn="PG:host=localhost port=5432 dbname=pirronord", "view_sp_fauna")
+spF <- sp_fauna[,c(1,3,16,17,18,20)]
+## view_sp_micro: A.ruffoi
+sp_micro <- readOGR(dsn="PG:host=localhost port=5432 dbname=pirronord", "view_micro")
+```
+
+Note: It will drop null geometries! Thus removing rows without xyx coordinates and rescaling the original bbox! Use dropNULLGeometries = FALSE will cause the matrix to be a simple data.frame without spatial attributes...
+
+```{r}
+# Combine the Spatial*Dataframe
+## Bind A.ruffoi with the coordinated records
+foo <- sp_record[,c(3,7)] #subset column: layer,type
+bar <- sp_micro[,c(3,7)]
+spX <- spRbind(foo, bar)
+str(spX)
+```
+
+## Cleaning data
+
+Check for duplicate
+
+```{r}
+# Check for duplication. Given a set of logical vectors, is at least one of the values true?
+any(duplicated(sp_record$code))
+# If TRUE, remove duplicated points
+sp_record <- unique(sp_record)
+```
+
+Remove NA and NaN
+
+```{r}
+
+```
+
+## Subsetting data
+
+Subset records from SU A, B, C and D. Exclude SU E in order to work with a bounding box more close to the excavated area (the selected working window of the point processes)
+
+```{r}
+# Subset lithics from SU A,B,C,D
+db_lithic <- subset(db_lithic, db_lithic$layer %in% c("A","B","C","D"))
+##sp_lithic <- subset(sp_lithic, sp_lithic$layer %in% c("A","B","C","D"))
+# Subset records from SU A,B,C,D
+db_record <- subset(db_record, db_record$layer %in% c("A","B","C","D"))
+spX <- subset(spX, spX$layer %in% c("A","B","C","D"))
+```
+
+Subset records by type: lithics, fossils, micro
+
+```{r}
+# Subset records not like DEl, Shell, Coprolite
+db_record <- subset(db_record, !db_record$type %in% c("DEL","Coprolite","Shell"))
+##sp_record <- subset(sp_record, !sp_record$type %in% c("DEL","Coprolite","Shell"))
+```
+
+```{r}
+Xc <- spX[which(spX$layer == "C" & spX$type %in% c("Bone","Tooth","Lithic","Micro")),]
+Xd <- spX[which(spX$layer == "D" & spX$type %in% c("Bone","Tooth","Lithic","Micro")),]
+```
+
+## Convert spatial data type: convert SpatialPointsDataframe to 'ppp' objects
+
+```{r, echo=FALSE}
+# Load libraries for point pattern analysis
+# http://cran.r-project.org/web/views/Spatial.html
+library(spatstat)
+```
+
+There are a number of packages for R which implement different functions for the analysis of spatial point patterns. These packages use different data structures to store the information of a point pattern. Package *maptools* offer some function to convert between _ppp_ objetcs ad _sp_ classes.
+
+### Window
+
+Set the bounding box
+
+```{r}
+# Bounding box of all records
+bbox(sp_record)
+```
+
+If the natural window for the point pattern is not a rectangle, then you need to use a command like > ppp(x, y, window = W)
+
+```{r}
+# Define the window as excavated area
+shp <- readShapePoly("/home/dncgst/project/pirronord_jas-reports/data/window/area_c.shp", proj4string=CRS(as.character(NA))) #import shp as SpatialPolygonsDataframe
+shp <- as(shp, "SpatialPolygons") #change to SpatialPolygons
+proj4string(shp) #check reference system = NA
+bbox(shp) #check the extension of the bounding box
+c <- as(shp, "owin") # convert to owin object
+c
+plot(c)
+
+shp <- readShapePoly("/home/dncgst/project/pirronord_jas-reports/data/window/area_d.shp", proj4string=CRS(as.character(NA))) #import shp as SpatialPolygonsDataframe
+shp <- as(shp, "SpatialPolygons") #change to SpatialPolygons
+proj4string(shp) #check reference system = NA
+bbox(shp) #check the extension of the bounding box
+d <- as(shp, "owin") # convert to owin object
+d
+plot(d)
+```
+
+### Multitype point pattern
+
+Extrude the z coordinate and use only xy coordinates for 2D analysis! Convert SpatialPointsDataframe in 'ppp' objects.
+
+```{r}
+# Convert the SpatialPointdataFrame to ppp objects
+## Fossil and lithic record
+X <- spCbind(Xd, Xd$coords.x3)
+names(X)[3] <- "z"
+record.d <- as(X[,c(2,3)], "ppp")
+record.d$window <- d
+unitname(record.d) <- "meter"
+marks(record.d)
+levels(record.d$marks$type)
+record.d$marks$type <- droplevels(record.d$marks$type)
+levels(record.d$marks$type) <- c("Fauna", "Lithic", "Fauna", "A.ruffoi")
+
+###Independent random displacements to each point in a point pattern. Micromammals from the same sieve share the same point (center of 1sq.m unit). Scale of perturbation within 0.5m radius
+record.d[which(record.d$marks$type == "A.ruffoi")] <- rjitter(record.d[which(record.d$marks$type == "A.ruffoi")], 0.5, retry=TRUE)
+```

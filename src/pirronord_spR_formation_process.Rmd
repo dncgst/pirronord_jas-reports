@@ -1,0 +1,278 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Point pattern analysis: site formation processes"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, echo=FALSE}
+# Load libraries for point pattern analysis
+# http://cran.r-project.org/web/views/Spatial.html
+library(spatstat)
+```
+
+The main aim of this analysis is to establish the nature of processes involved in the formation of the Pirro Nord (P13) deposit, by investigating its intensity and the relative spatial distribution of the archaeological and paleontological remains.
+
+Research questions include the spatial distribution and clustering of finds, whether different types of find have the same the same spatial distribution (one of the main question is whether the types of finds are segregated, in the sense that there are regions of the excavated area where one type is predominant).
+
+We want to test our working hypothesis that the deposition of lithics and fossils results from subsequent mass wasting events (such as debris flows), carrying, together with rock clasts, the archaeological and paleontological record and filling the fissure. The relative spatial association of archaeological and paleontological remains whould support the assumption, base on field observations, regarding their stratigraphic association (and contemporaneity).
+
+However, the spatial interaction between the two types of remains (lithic and fossil) included in the body sediment does not necessary reflects the first-deposition setting... More analyses of post-depositional processes are needed (see [taphonomic point pattern analysis](./pirronord_spR_taphonomy.Rmd).
+
+We treat the observed patterns of the archaeological and paleontological record as realization of spatial point processes, i.e. site formation processes.
+
+We first explore the overall intensity of the finds from SU's C and D.
+
+## Unmarked point pattern
+
+We provisionally assume the process is stationary and isotropic (stationarity implies homogeneous intensity).
+
+> Homogeneity may be a tentative, working assumption for some kinds of analysis. Homogeneity may be assumed if there is theoretical justification. [...] However, this assumption would be inappropriate for other point patterns, where the intensity in spatially varying (inhomogeneous) [Baddeley2015, p.157].
+
+### Summary
+
+Intensity of the archaeological and paleontological assemblage is analyzed considering the point pattern as one unmarked realization of one depositional process. The rate of deposition (intensity) is considered proportional to a baseline: the spatially varying density of coordinated geological clasts dispersed in the same sediment body.
+
+```{r}
+# Plot
+plot(record.d)
+# Summary
+summary(record.d)
+# Average intensity regardless ot point types
+sum(intensity(record.d))
+# Standard error, assuming a Poisson process
+lambda <- intensity(record.d)
+sqrt(lambda/area(Window(record.d)))
+```
+
+### Quadrat counts
+
+> The power of the quadrat test depends on the size of quadrats, and is optimal when the quadrats are neither very large nor yery small. The power also depends on the alternative hypothesis, in particular on the 'spatial scale' of any departures from the assumptions of constant intensity and independence of points [Baddeley2015, p.167].
+
+```{r}
+# Quadrat count
+H <- hextess(unmark(record.d), 0.2)
+Q <- quadratcount(unmark(record.d), tess=H)
+plot(intensity(Q, image=TRUE))
+
+# Chi-squared test
+### _p-value_: We evaluate the hypotheses by comparing the the p-value to the significance level. Because the p-value is less than the significance level, we reject the null hypothesis. A small p-value (usually < 0.05) corresponds to sufficient evidence to reject H0 in favor of H1.
+### _alpha_: As a general rule of thumb, for those cases where thew null hypothesis is actually true, we do not want to incorrectly reject H0 (Type 1 Error) more than 5% of the time. This correspond to a significance level of 0.05 
+
+## Chi-squared test of uniformity (test homogeneity assuming independence)
+test <- quadrat.test(unmark(record.d), tess=H) # SU C and D p-value < 2.2e-16 :the value of .Machine$double.eps - the smallest floating point number such that 1 + x != 1 
+## Chi-squared test of independence (test Poisson distribution assuming homogeneity)
+test <- quadrat.test(unmark(record.d), tess=H, alternative="clustered", method="MonteCarlo", conditional=TRUE)
+test$p.value
+plot(test)
+
+## Likelihood ratio test
+test <- quadrat.test(unmark(record.d), tess=H, CR = 0)
+
+## Freeman-Tukey test
+test <- quadrat.test(unmark(record.d), tess=H, CR = -1/2)
+```
+
+SU C and D. Chi-squared test of uniformity reject the null hypothesis of CSR
+Warning message: Some expected counts are small; chi^2 approximation may be inaccurate.
+The Conditional Monte Carlo test of CSR using quadrat counts also reject the null hypothesis.
+
+> The main critique of the quadrat test […] is the lack of information. This is a goodness-of-fit test in which the alternative hypothesis H1 is simply the negation of H0, that is, the alternative is that 'the process is not a homogeneous Poisson process'. A point process may fail to be a homogeneous Poisson process either because it fails to have homogeneous intensity, or because it violates the property of independence between points [Baddeley2015, p.167].
+
+Indeed, the Conditional Monte Carlo test of independence (assuming homogeneity) reject the hull hypothesis of a Poisson distribution in favor of the alternative clustered hypothesis.
+
+### Smoothing estimation of intensity
+
+```{r}
+# Kernel estimation
+## bandwidth selection
+bw.diggle(unmark(record.c))
+bw.ppl(unmark(record.c))
+bw.scott(unmark(record.c))
+bw.frac(unmark(record.c))
+## if neither sigma nor varcov is specified, an isotropic Gaussian kernel will be used, with a default value of sigma calculated by a simple rule of thumb that depends only on the size of the window.
+
+dens.diggle <- density(unmark(record.d), sigma=bw.diggle(unmark(record.d)), edge=TRUE, diggle=TRUE)
+dens.ppl <- density(unmark(record.d), sigma=bw.ppl(unmark(record.d)), edge=TRUE, diggle=TRUE)
+plot(dens.ppl, axes=TRUE)
+plot(dens.diggle, axes=TRUE)
+persp(dens.ppl, theta=-25, phi=25, scale=TRUE, expand=.2, colmap=heat.colors)
+
+# Spatially adaptive smoothing
+plot(adaptive.density(unmark(record.d), f=0.1, nrep=30))
+plot(nndensity(unmark(record.d), k=20))
+
+# Hot spot, cluster and local features
+LRc <- scanLRTS(record.c, r=2*bw.diggle(unmark(record.c)))
+LRd <- scanLRTS(record.d, r=2*bw.diggle(unmark(record.d)))
+plot(LRd, axes=TRUE)
+pval.c <- eval.im(pchisq(LRc, df=1, lower.tail=FALSE))
+pval.d <- eval.im(pchisq(LRd, df=1, lower.tail=FALSE))
+plot(pval.d)
+```
+
+Giving that
+
+> Any bandwidth selection rule gives unsatisfactory results in some cases, because it is based on assumption about the dependence between points, which may be inappropriate. Likelihood cross-validation bw.ppl assumes an inhomogeneous Poisson process; bw.diggle assumes a Cox process [...] [Baddeley2015, p.171]
+
+the intesity of finds in SU C and D appears to have hotspots/clusters in 6<x>7 and 8<x>9.
+
+> In analysing a point pattern, it may be impossible to distinguish between clustering and spatial inhomogeneity. Bartlett showed that a single realisation of a point process model that is stationary and clustered […] may be identical to a single realisation of a point process model that has spatially inhomogeneous intensity but is not clustered. [...] Formal tests such as the chi-squared test of CSR using quadrat counts are affected by a similar weakness [confounding] [Baddeley2015, p.151].
+
+### Dependence of intensity on a covariate
+
+```{r}
+hist(record.d$x)
+
+# Tests
+## small p-value reject the H0 of CSR, thus suggests strong evidence that the density depends on the covariate Z
+test <- cdf.test(unmark(record.c), Zc, test="ks")
+test <- cdf.test(unmark(record.c), "x")
+test <- berman.test(unmark(record.c), Zc)
+test <- berman.test(unmark(record.d), "x")
+test <- berman.test(unmark(record.d), "x", "Z2")
+plot(test)
+#
+plot(roc(unmark(record.d), "x", high=TRUE))
+auc(unmark(record.d), "x", high=FALSE)
+```
+
+### Correlation
+
+Chi-squared test of uniformity rejected the null hypothesis of CSR. Either because the pattern is inhomogeneous, or because it is not a Poisson pattern. Kernel density estimation and tests show an inhomogeneous intensity, but a Cox/cluser homogeneous pattern is a valid alternative.
+
+Provisionally assuming homogeneity, we test correlations between points of the pattern.
+
+```{r}
+### NOTES about the envelope:
+## global=FALSE > The pointwise envelopes are not “confidence bands” for the true value of the function! Rather, they specify the critical points for a Monte Carlo test (Ripley, 1981). The test is constructed by choosing a fixed value of r, and rejecting the null hypothesis if the observed function value lies outside the envelope at this value of r. This test has exact significance level alpha = 2 * nrank/(1 + nsim).
+### --> 39 sim = 0.05; 199 sim = 0.01
+## global=TRUE > The simultaneous critical envelopes allow us to perform a different Monte Carlo test (Ripley, 1981). Simulation envelopes do not compute confidence intervals; they generate significance bands. The test rejects the null hypothesis if the graph of the observed function lies outside the envelope at any value of r. This test has exact significance level alpha = nrank/(1 + nsim).
+### --> 19 sim = 0.05; 99 sim = 0.01
+
+### NOTES about the edge correction:
+# > So long as some kind of edge correction is performed (which happens automatically in spatstat: default Edge correction: “iso”), the particular choice of edge correction technique is usually not critical.
+## > The choice of edge correction depends partly on the size of dataset. In small dataset statistical performance is very important, and the methods of choice are the Horvitz-Thompson stype weighted edge corrections (translation, isotropic or rigid motion correction); the border method is too imprecise. In moderately large datasets the border method performs satisfactorily. In huge datasets no edge correction is necessary, and it is computationally efficient to avoid edge correction.
+
+# Ripley K-function
+K <- Kest(unmark(record.d))
+plot(K)
+E <- envelope(unmark(record.d), Kest, nsim=39, rank=1, global=FALSE, correction="Ripley")
+plot(E)
+
+# Besag L-function (centred version of the K-function)
+## The square root transformation also approximately stabilises the variance of the estimator
+L <- Lest(unmark(record.d))
+plot(L)
+E <- envelope(unmark(record.d), Lest, nsim=39, rank=1, global=FALSE, correction="Ripley")
+plot(E)
+```
+
+Results of the K and L functions are consistent with clustering (they indicates positive association between points in SU C and D). But:
+
+> The K-function is defined and estimated under the assumption that the point process is stationary. If the process is not stationary, deviations between the empirical and theoretical functions [...] are not necessary evidence of interpoint interaction, since they might also be attributable to variations in intensity.
+
+> Correlation is not causation. There are many possible causes and mechanisms of correlation between points. [...] Spatial clustering does not imply that the points are organized into identifiable 'clusters'; merely that they are closer together than would be expected for a complete random pattern.
+
+> The K-function reflects correlation between pairs of points, not direct dependence. Dependence between points at one scale can give rise to correlation between points at another scale. [...] The K-function is cumulative: K(r) accumulates contributions from all distances less than or equal to r.
+
+```{r}
+# Pair correlation function
+## Non-cumulative summary statistic
+g <- pcf(unmark(record.d), divisor="d")
+plot(g)
+E <- envelope(unmark(record.c), pcf, method="d", nsim=39, rank=1, global=FALSE, correction="Ripley"); plot(E)
+```
+
+> If it is suspected that the patter may be a patchwork of different textures in different places, or that the pattern contains some anomalous features, then it can be useful to classify the n local K-function into several groups of functions, perhaps using hierarchical clustering techniques [Baddeley2015, p.248]
+
+```{r}
+# Local K-function
+
+```
+
+### Spacing
+
+> The G and K-functions are sensitive to different aspects of the point process. The G-function summarises information at shorter scale than the K-function [Baddeley2015, p.295]
+
+```{r}
+# Homogeneous assumption
+plot(Gest(unmark(record.d)))
+E <- envelope(unmark(record.d), Gest, nsim=39, global=FALSE); plot(E)
+plot(Fest(unmark(record.d)))
+E <- envelope(unmark(record.d), Fest, nsim=39, global=FALSE); plot(E)
+#plot(Jest(record.c))
+#E <- envelope(unmark(record.c), Jest, nsim=39, global=TRUE); plot(E)
+```
+
+## Multitype point pattern
+
+```{r}
+# Getting and cleaning data
+record.c
+Xr.c <- record.c
+marks(Xr.c) <- marks(Xr.c)[,1]
+
+record.d
+Xr.d <- record.d
+marks(Xr.d) <- marks(Xr.d)[,1]
+```
+
+### Summary
+
+```{r}
+# EDA
+plot(Xr.c)
+plot(split(Xr.c))
+summary(Xr.c)
+intensity(Xr.c)
+```
+
+### Intensity
+
+Analysis of the relative density of points of differnt types. 
+> It may provide evidence of an association between spatial location and type of point (suggesting there is spatial segregation of types).
+
+```{r}
+# Intensity
+plot(density(split(Xr.c), sigma=bw.diggle(Xr.c), edge=TRUE, diggle=TRUE))
+ProbU <- relrisk(Xr.c)
+ProbD <- relrisk(Xr.c, diggle=TRUE)
+plot(ProbD)
+
+## Diggle segregation test
+segregation.test(Xr.c, nsim=19) #p-value = 0.1 fail to reject H0
+
+##
+plot(relrisk(Xr.c, relative=TRUE, control="Fauna"))
+```
+
+### Correlation
+
+```{r}
+# Intensity estimates
+plot(Kcross(Xr.c, "Lithic", "Fauna", sigma=bw.diggle(Xr.c), correction="Ripley"))
+plot(Kcross(Xr.c, "Lithic", "A.ruffoi", sigma=bw.diggle(Xr.c), correction="Ripley"))
+
+# Correlation and spacing
+nncorr(Xr.c)
+
+plot(alltypes(Xr.c, Kcross, sigma=bw.diggle(Xr.c), correction="Ripley"))
+plot(alltypes(Xr.c, Lcross, sigma=bw.diggle(Xr.c), correction="Ripley"))
+plot(alltypes(Xr.c, pcfcross, sigma=bw.diggle(Xr.c), correction="Ripley"))
+plot(alltypes(Xr.c, markconnect, sigma=bw.diggle(Xr.c), correction="Ripley"))
+E <- alltypes(Xr.c, Kcross, sigma=bw.diggle(Xr.c), envelope=TRUE, rank=1, nsim=199, global=FALSE, correction="Ripley")
+
+plot(alltypes(Xr.c, Kdot, sigma=bw.diggle(Xr.c), correction="Ripley"))
+
+E <- alltypes(Xr.c, Kcross, envelope=TRUE, rank=1, nsim=39, global=FALSE, correction="Ripley"); plot(E)
+```
+
+## Reference
+
+Baddeley, A., Ruback, E., Turner, R., 2015. Spatial Point Patterns: Methodology and Applications with R. Chapman and Hall/CRC Press, London

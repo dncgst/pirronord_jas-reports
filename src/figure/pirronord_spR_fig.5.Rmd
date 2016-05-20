@@ -1,0 +1,46 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Figure 5"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r, echo=FALSE}
+setEPS()
+postscript("./doc/artwork/Fig5.eps", width=15, height=10)
+
+pdf("./doc/artwork/Fig5.pdf", width=15, height=10)
+
+par(mfrow=c(2,3), cex=1)
+
+# a) Scatterplot of projected z coordinate
+plot(record.c$x, record.c$marks$z, pch=c(1,2,3)[record.c$marks$type], col=c("#f8766d","#00ba38","#00bfc4")[record.c$marks$type], main="a", xlab="x(meter)", ylab="z(meter)")
+#plot(boulder.c$x, boulder.c$marks$z, pch=19, bg="black", add=TRUE)
+
+# b) Smooth density estimation of the fauna assemblage and distribution of the lithic artifacts in SU C
+plot(density(Xr.c[Xr.c$marks == "Fauna"]), sigma=bw.ppl(X), edge=TRUE, diggle=TRUE, axes=TRUE, main="c")
+plot(Xr.c[Xr.c$marks == "Lithic"], clipwin=c, add=TRUE, pch=2, lwd=1, col="#00ba38")
+plot(Xr.c[Xr.c$marks == "A.ruffoi"], clipwin=c, add=TRUE, pch=3, lwd=1, col="#00bfc4")
+legend(x="top", c("Fauna","Lithic","A.ruffoi"), pch=c(1,2,3), col=c("#f8766d","#00ba38","#00bfc4"))
+
+# c) ROC
+plot(roc(unmark(Xr.c), "x", high=TRUE), main="e")
+
+# d) Scatterplot of projected z coordinate
+plot(record.d$x, record.d$marks$z, pch=c(1,2,3)[record.d$marks$type], col=c("#f8766d","#00ba38","#00bfc4")[record.d$marks$type], main="b", xlab="x(meter)", ylab="z(meter)")
+
+# e) Smooth density estimation of the fauna assemblage and distribution of the lithic artifacts in SU D
+plot(density(Xr.d[Xr.d$marks == "Fauna"]), sigma=bw.ppl(X), edge=TRUE, diggle=TRUE, axes=TRUE, main="d")
+plot(Xr.d[Xr.d$marks == "Lithic"], clipwin=d, add=TRUE, pch=2, lwd=1, col="#00ba38")
+plot(Xr.d[Xr.d$marks == "A.ruffoi"], clipwin=d, add=TRUE, pch=3, lwd=1, col="#00bfc4")
+legend(x="top", c("Fauna","Lithic","A.ruffoi"), pch=c(1,2,3), col=c("#f8766d","#00ba38","#00bfc4"))
+
+
+# f) ROC
+plot(roc(unmark(Xr.d), "x", high=TRUE), main="f")
+
+dev.off()
+
+par(mfrow=c(1,1))
+```

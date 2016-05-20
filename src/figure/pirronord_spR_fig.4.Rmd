@@ -1,0 +1,87 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Figure 4"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r, echo=FALSE}
+## Getting and cleaning data
+box <- bbox(spX) # x: 3.063  8.998 y: 0.640  3.072 z: -3.163 -0.040
+
+### 3D lithic
+foo <- subset(sp_lithic, sp_lithic$layer %in% c("A","B","C","D"))
+foo <- pp3(foo$coords.x1, foo$coords.x2, foo$coords.x3, box3(c(3.063,8.998), c(0.640,3.072), c(-3.163,-0.040)))
+m <- spL$patina
+bar <- pp3(spL$coords.x1, spL$coords.x2, spL$coords.x3, box3(c(3.063,8.998), c(0.640,3.072), c(-3.163,-0.040)))
+marks(bar) <- m
+col.l <- as.factor(bar$data$marks)
+col <- c("#f8766d","grey","#00ba38","#619cff","grey")
+
+### 3D fossil
+foo <- subset(spX, spX$type %in% c("Bone","Tooth"))
+foo <- pp3(foo$coords.x1, foo$coords.x2, foo$coords.x3, box3(c(3.063,8.998), c(0.640,3.072), c(-3.163,-0.040)))
+m <- Fc$oxid
+m <- Fc$taphorecord
+bar <- pp3(Fc$coords.x1, Fc$coords.x2, Fc$coords.x3, box3(c(3.063,8.998), c(0.640,3.072), c(-3.163,-0.040)))
+marks(bar) <- m
+col.l <- as.factor(bar$data$marks)
+col <- c("#f8766d","#619cff","#00ba38") #oxid col
+col <- c("#00ba38","#619cff","#f8766d") #taphorecord col
+```
+
+```{r, echo=FALSE}
+setEPS()
+postscript("./doc/artwork/Fig4.eps", width=15, height=10)
+
+pdf("./doc/artwork/Fig4.pdf", width=15, height=10)
+
+par(mfcol=c(2,3), cex=1)
+
+# 3D plot of taphonomic features (patinae) on the 'sampled' lithic assemblage
+plot(foo, cex=1, pch=2, col="grey", main="a")
+plot(bar, use.marks=TRUE, cex=1, pch=2, col=col[col.l], add=TRUE)
+
+# Vertical distribution of taphonomic features (patinae) on the 'sampled' lithic assemblage
+hist(spL$coords.x3, nclass=25, prob=TRUE, xlim=c(-3.5, 0), main="b", xlab="z(meter)")
+lines(density(spL$coords.x3[which(spL$patina == "Absent")], bw="nrd"), col="#f8766d", lwd=1)
+abline(v=mean(spL$coords.x3[which(spL$patina == "Absent")]), col="#f8766d", lwd=1, lty=2)
+lines(density(spL$coords.x3[which(spL$patina == "Fe-Mn spotted")], bw="nrd"), col="#619cff", lwd=1)
+abline(v=mean(spL$coords.x3[which(spL$patina == "Fe-Mn spotted")]), col="#619cff", lwd=1, lty=2)
+lines(density(spL$coords.x3[which(spL$patina == "Fe-Mn covering")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(spL$coords.x3[which(spL$patina == "Fe-Mn covering")]), col="#00ba38", lwd=1, lty=2)
+legend(x="topright", c("Absent","Fe-Mn spotted","Fe-Mn covering"), lty=1, lwd=1, col=c("#f8766d","#619cff","#00ba38"))
+
+# 3D plot of taphonomic features (oxides) on the 'sampled' faunal assemblage
+plot(foo, cex=1, pch=1, col="grey", main="c")
+plot(bar, use.marks=TRUE, cex=1, pch=1, col=col[col.l], add=TRUE)
+
+# Vertical distribution of taphonomic features (oxides) on the 'sampled' faunal assemblage
+hist(Fc$coords.x3, nclass=10, prob=TRUE, xlim=xlimC, ylim=c(0, 3), main="d", xlab="z(meter)")
+lines(density(Fc$coords.x3[which(Fc$oxid == "Low")], bw="nrd"), col="#f8766d", lwd=1)
+abline(v=mean(Fc$coords.x3[which(Fc$oxid == "Low")]), col="#f8766d", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$oxid == "Medium")], bw="nrd"), col="#619cff", lwd=1)
+abline(v=mean(Fc$coords.x3[which(Fc$oxid == "Medium")]), col="#619cff", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$oxid == "High")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(Fc$coords.x3[which(Fc$oxid == "High")]), col="#00ba38", lwd=1, lty=2)
+legend(x="topright", c("Low","Medium","High"), lty=1, lwd=1, col=c("#f8766d","#619cff","#00ba38"))
+
+# 3D plot of taphorecords on the 'sampled' faunal assemblage
+plot(foo, cex=1, pch=1, col="grey", main="e")
+plot(bar, use.marks=TRUE, cex=1, pch=1, col=col[col.l], add=TRUE)
+
+# Vertical distribution of taphorecords on the 'sampled' faunal assemblage
+hist(Fc$coords.x3, nclass=10, prob=TRUE, xlim=xlimC, ylim=c(0, 5), main="f", xlab="z(meter)")
+lines(density(Fc$coords.x3[which(Fc$taphorecord == "3")], bw="nrd"), col="#f8766d", lwd=1)
+abline(v=mean(Fc$coords.x3[which(Fc$taphorecord == "3")]), col="#f8766d", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$taphorecord == "2")], bw="nrd"), col="#619cff", lwd=1)
+abline(v=mean(Fc$coords.x3[which(Fc$taphorecord == "2")]), col="#619cff", lwd=1, lty=2)
+lines(density(Fc$coords.x3[which(Fc$taphorecord == "1")], bw="nrd"), col="#00ba38", lwd=1)
+abline(v=mean(Fc$coords.x3[which(Fc$taphorecord == "1")]), col="#00ba38", lwd=1, lty=2)
+legend(x="topright", c("TR3","TR2","TR1"), lty=1, lwd=1, col=c("#f8766d","#619cff","#00ba38"))
+
+dev.off()
+
+par(mfrow=c(1,1))
+```

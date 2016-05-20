@@ -1,0 +1,52 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Figure 7"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r}
+setEPS()
+postscript("./doc/artwork/Fig7.eps", width=15, height=15)
+
+pdf("./doc/artwork/Fig7.pdf", width=15, height=15)
+
+par(mfrow=c(3,3), cex=1)
+
+#Cff <- envelope(Xr.c, Kcross, funargs=list(i="Fauna",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Cff, legend=FALSE, main="a")
+
+#Cll <- envelope(Xr.c, Kcross, funargs=list(i="Lithic",j="Lithic"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Cll, legend=FALSE, main="b")
+
+#Caa <- envelope(Xr.c, Kcross, funargs=list(i="A.ruffoi",j="A.ruffoi"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Caa, legend=FALSE, main="c")
+
+#Clf <- envelope(Xr.c, Kcross, funargs=list(i="Lithic",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Clf, legend=FALSE, main="d")
+
+#Cla <- envelope(Xr.c, Kcross, funargs=list(i="Lithic",j="A.ruffoi"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Cla, legend=FALSE, main="e")
+
+#Caf <- envelope(Xr.c, Kcross, funargs=list(i="A.ruffoi",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Caf, legend=FALSE, main="f")
+
+#CGlf <- envelope(Xr.c, Gcross, funargs=list(i="Lithic",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="km")
+plot(CGlf, legend=FALSE, main="g")
+#plot(Gcross(Xr.c, "Fauna", "Lithic"), km ~ r)
+#plot(Fest(split(Xr.c)$Lithic), km ~ r, add=TRUE, lty=2)
+
+#CGla <- envelope(Xr.c, Gcross, funargs=list(i="Lithic",j="A.ruffoi"), nsim=199, rank=1, global=FALSE, correction="km")
+plot(CGla, legend=FALSE, main="h")
+#plot(Gcross(Xr.c, "Lithic", "A.ruffoi"), km ~ r)
+#plot(Fest(split(Xr.c)$A.ruffoi), km ~ r, add=TRUE, lty=2)
+
+#CGaf <- envelope(Xr.c, Gcross, funargs=list(i="A.ruffoi",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="km")
+plot(CGaf, legend=FALSE, main="i")
+#plot(Gcross(Xr.c, "A.ruffoi", "Fauna"), km ~ r)
+#plot(Fest(split(Xr.c)$Fauna), km ~ r, add=TRUE, lty=2)
+
+dev.off()
+```
+

@@ -1,0 +1,56 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Figure 8"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r}
+setEPS()
+postscript("./doc/artwork/Fig8.eps", width=15, height=15)
+
+pdf("./doc/artwork/Fig8.pdf", width=15, height=15)
+
+par(mfrow=c(3,3), cex=1)
+
+#E <- alltypes(Xr.d, Kcross, sigma=bw.diggle(Xr.d), envelope=TRUE, rank=1, nsim=199, global=FALSE, correction="Ripley")
+#E$title <- c("")
+#plot(E)
+
+#Dff <- envelope(Xr.d, Kcross, funargs=list(i="Fauna",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Dff, legend=FALSE, main="a")
+
+#Dll <- envelope(Xr.d, Kcross, funargs=list(i="Lithic",j="Lithic"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Dll, legend=FALSE, main="b")
+
+#Daa <- envelope(Xr.d, Kcross, funargs=list(i="A.ruffoi",j="A.ruffoi"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Daa, legend=FALSE, main="c")
+
+#Dlf <- envelope(Xr.d, Kcross, funargs=list(i="Lithic",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Dlf, legend=FALSE, main="d")
+
+#Dla <- envelope(Xr.d, Kcross, funargs=list(i="Lithic",j="A.ruffoi"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Dla, legend=FALSE, main="e")
+
+#Daf <- envelope(Xr.d, Kcross, funargs=list(i="A.ruffoi",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="Ripley")
+plot(Daf, legend=FALSE, main="f")
+
+#DGlf <- envelope(Xr.d, Gcross, funargs=list(i="Lithic",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="km")
+plot(DGlf, legend=FALSE, main="g")
+#plot(Gcross(Xr.d, "Fauna", "Lithic"), km ~ r)
+#plot(Fest(split(Xr.d)$Lithic), km ~ r, add=TRUE, lty=2)
+
+#DGla <- envelope(Xr.d, Gcross, funargs=list(i="Lithic",j="A.ruffoi"), nsim=199, rank=1, global=FALSE, correction="km")
+plot(DGla, legend=FALSE, main="h")
+#plot(Gcross(Xr.d, "Lithic", "A.ruffoi"), km ~ r)
+#plot(Fest(split(Xr.d)$A.ruffoi), km ~ r, add=TRUE, lty=2)
+
+#DGaf <- envelope(Xr.d, Gcross, funargs=list(i="A.ruffoi",j="Fauna"), nsim=199, rank=1, global=FALSE, correction="km")
+plot(DGaf, legend=FALSE, main="i")
+#plot(Gcross(Xr.d, "A.ruffoi", "Fauna"), km ~ r)
+#plot(Fest(split(Xr.d)$Fauna), km ~ r, add=TRUE, lty=2)
+
+dev.off()
+```
+

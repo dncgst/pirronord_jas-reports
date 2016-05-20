@@ -1,0 +1,38 @@
+---
+title: "Pirro Nord 13 - Reproducible Research"
+subtitle: "Figure 9"
+author: "Domenico Giusti"
+output: html_document
+  toc: yes
+---
+
+```{r}
+setEPS()
+postscript("./doc/artwork/Fig9.eps", width=10, height=10)
+
+pdf("./doc/artwork/Fig9.pdf", width=10, height=10)
+
+par(mfcol=c(2,2), cex=1)
+par(pty="s")
+
+# a) Random labelling patinae on the lithic assemblage SU C
+#Ec <- envelope(Xp.c, Kdif, nsim=199, i="Fe-Mn", global=FALSE, simulate=expression(rlabel(Xp.c)), correction="Ripley")
+plot(Ec, legend=FALSE, main="a")
+
+# b) Random labelling patinae on the lithic assemblage SU D
+#Ed <- envelope(Xp.d, Kdif, nsim=199, i="Fe-Mn", global=FALSE, simulate=expression(rlabel(Xp.d)), correction="Ripley")
+plot(Ed, legend=FALSE, main="b")
+
+# c) Random labelling oxid on the faunal assemblage SU C
+#Eo <- envelope(Xo.c, Kdif, nsim=199, i="Fe-Mn", global=FALSE, simulate=expression(rlabel(Xo.c)), correction="Ripley")
+plot(Eo, legend=FALSE, main="c")
+
+# d) Random labelling oxid on the faunal and lithic assemblage SU C
+#X <- superimpose(Xo.c, Xp.c)
+#E <- envelope(X, Kdif, nsim=199, i="Fe-Mn", global=FALSE, simulate=expression(rlabel(X)), correction="Ripley")
+plot(E, legend=FALSE, main="d")
+
+dev.off()
+
+par(mfrow=c(1,1))
+```
