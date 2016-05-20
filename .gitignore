@@ -1,6 +1,19 @@
-# Compiled
-*.elc
+### R files
+.Rhistory
+#.Rdata
+*-Ex.R
+.Rprofile
 
-# Packaging
-.cask
+### RStudio files
+.Rproj.user/
 .Rproj.user
+
+### Emacs backup
+*~
+
+### Large File Storage
+*.tif
+*.tiff
+
+### Ignore directory
+ignore/

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "pirronord_jas-reports\n=====================================\n\nThis repository contains a compendium of data, source code and text associated with the publication (currently under review) \"The need for a taphonomic perspective in spatial analysis: formation processes at the Early Pleistocene site of Pirro Nord (P13), Apricena, Italy\" authored by D. Giusti and M. Arzarello (DOI:).\n\n## Publication abstract:\nEver since their percolation from neighbour disciplines, archaeology has employed spatial statistics to unravel, at different scales, past human behaviors from scatters of material culture. However, in the interpretation of the archaeological record, particular attention must be given to disturbance factors that operate in post-depositional processes. In this paper, we answer the need for a specific taphonomic perspectives in spatial analysis by applying point pattern analysis of taphonomic alterations on the faunal and lithic assemblages from the Early Pleistocene site of Pirro~Nord~13, Italy. The site, biochronologically dated between 1.3 and 1.6~Ma~BP, provides evidence for an early hominin presence in Europe. The archaeological and paleontological deposit occurs as filling of a karst structure that is currently exposed. We investigated the distribution of the archaeological and paleontological assemblage, as well as the distribution of identified taphonomic features, in order to evaluate degree and reliability of the spatial association of the lithic artifacts with the faunal remains. Our results contribute to the interpretation of the diagenetic history of Pirro~Nord~13 and support the stratigraphic integrity of the site.\n\n## Repository DOI:\n\n\n\nThe files archived at the DOI above are associated with the publication. The files hosted at github.com are the development versions and may have changed since the repository was published.\n\n## Repository author:\n\nD. Giusti (domenico.giusti@uni-tuebingen.de)\n\n## Licenses:\n\nData: CC-BY-4.0 Copyright: 2016 Domenico Giusti, Marta Arzarello, Cristina Bagnus\n\nCode: MIT Copyright: 2016 Domenico Giusti\n\nText: CC-BY-4.0 Copyright: 2016 Domenico Giusti\n\n## Colophon:\n\nR version 3.3.0 (2016-05-03)\nPlatform: x86_64-pc-linux-gnu (64-bit)\nRunning under: Debian GNU/Linux 8 (jessie)\n\nlocale:\n [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C               LC_TIME=en_US.UTF-8       \n [4] LC_COLLATE=en_US.UTF-8     LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   \n [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                  LC_ADDRESS=C              \n[10] LC_TELEPHONE=C             LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       \n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n[1] RPostgreSQL_0.4-1 DBI_0.4-1         sp_1.2-3         \n\nloaded via a namespace (and not attached):\n[1] tools_3.3.0     grid_3.3.0      lattice_0.20-33",
+    "created" : 1463753766306.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2887053649",
+    "id" : "554F2C01",
+    "lastKnownWriteTime" : 1463758831,
+    "last_content_update" : 1463758831673,
+    "path" : "~/project/pirronord_jas-reports/README.md",
+    "project_path" : "README.md",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "markdown"
+}

@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "### R files\n.Rhistory\n#.Rdata\n*-Ex.R\n#.Rprofile\n\n### RStudio files\n#.Rproj.user/\n#.Rproj.user\n\n### Emacs backup\n*~\n\n### Large File Storage\n*.tif\n*.tiff\n\n### Ignore directory\nignore/\n",
+    "created" : 1463759479491.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2235160777",
+    "id" : "6B9A87A1",
+    "lastKnownWriteTime" : 1463759521,
+    "last_content_update" : 1463759521593,
+    "path" : "~/project/pirronord_jas-reports/.gitignore",
+    "project_path" : ".gitignore",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "gitignore"
+}
