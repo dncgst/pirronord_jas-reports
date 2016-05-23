@@ -23,7 +23,7 @@ Data: CC-BY-4.0 Copyright: 2016 Domenico Giusti, Marta Arzarello, Cristina Bagnu
 
 Code: MIT Copyright: 2016 Domenico Giusti
 
-Text: CC-BY-4.0 Copyright: 2016 Domenico Giusti
+Text: CC-BY-4.0 Copyright: 2016 Domenico Giusti, Marta Arzarello
 
 ## Colophon
 
