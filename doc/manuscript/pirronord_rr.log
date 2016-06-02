@@ -1,10 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.3.14)  28 MAY 2016 20:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.3.14)  2 JUN 2016 22:56
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**\input pirronord_rr.tex
+**pirronord_rr.tex
 (./pirronord_rr.tex
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 5 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/elsarticle/elsarticle.cls
 Document Class: elsarticle 2009/09/17, 1.2.0: Elsevier Ltd
 \@bls=\dimen102
@@ -671,21 +672,21 @@ File: ../artwork/Fig1.pdf Graphic file (type pdf)
 Package pdftex.def Info: ../artwork/Fig1.pdf used on input line 76.
 (pdftex.def)             Requested size: 345.0pt x 243.80017pt.
  [4 <../artwork/Fig1.pdf>] [5] [6] [7]
-<../artwork/Fig2.pdf, id=88, 1156.32pt x 722.7pt>
+<../artwork/Fig2.pdf, id=114, 1156.32pt x 722.7pt>
 File: ../artwork/Fig2.pdf Graphic file (type pdf)
  <use ../artwork/Fig2.pdf>
 Package pdftex.def Info: ../artwork/Fig2.pdf used on input line 151.
 (pdftex.def)             Requested size: 345.0pt x 215.6207pt.
 
 [8] [9 <../artwork/Fig2.pdf>] [10]
-<../artwork/Fig3.pdf, id=108, 722.7pt x 722.7pt>
+<../artwork/Fig3.pdf, id=133, 722.7pt x 722.7pt>
 File: ../artwork/Fig3.pdf Graphic file (type pdf)
  <use ../artwork/Fig3.pdf>
 Package pdftex.def Info: ../artwork/Fig3.pdf used on input line 182.
 (pdftex.def)             Requested size: 345.0pt x 344.99533pt.
 
 [11] [12 <../artwork/Fig3.pdf>]
-<../artwork/Fig4.pdf, id=122, 1084.05pt x 722.7pt>
+<../artwork/Fig4.pdf, id=147, 1084.05pt x 722.7pt>
 File: ../artwork/Fig4.pdf Graphic file (type pdf)
  <use ../artwork/Fig4.pdf>
 Package pdftex.def Info: ../artwork/Fig4.pdf used on input line 197.
@@ -697,34 +698,34 @@ Overfull \hbox (4.89044pt too wide) in paragraph at lines 212--213
 lly non-parametrically
  []
 
-[15] [16] [17] [18] <../artwork/Fig5.pdf, id=151, 1084.05pt x 722.7pt>
+[15] [16] [17] [18] <../artwork/Fig5.pdf, id=176, 1084.05pt x 722.7pt>
 File: ../artwork/Fig5.pdf Graphic file (type pdf)
 
 <use ../artwork/Fig5.pdf>
 Package pdftex.def Info: ../artwork/Fig5.pdf used on input line 250.
 (pdftex.def)             Requested size: 345.0pt x 230.00055pt.
- <../artwork/Fig6.pdf, id=152, 1084.05pt x 722.7pt>
+ <../artwork/Fig6.pdf, id=177, 1084.05pt x 722.7pt>
 File: ../artwork/Fig6.pdf Graphic file (type pdf)
 
 <use ../artwork/Fig6.pdf>
 Package pdftex.def Info: ../artwork/Fig6.pdf used on input line 259.
 (pdftex.def)             Requested size: 345.0pt x 230.00055pt.
  [19] [20 <../artwork/Fig5.pdf>] [21 <../artwork/Fig6.pdf>] <../artwork/Fig7.pd
-f, id=194, 1084.05pt x 1084.05pt>
+f, id=219, 1084.05pt x 1084.05pt>
 File: ../artwork/Fig7.pdf Graphic file (type pdf)
 
 <use ../artwork/Fig7.pdf>
 Package pdftex.def Info: ../artwork/Fig7.pdf used on input line 272.
 (pdftex.def)             Requested size: 345.0pt x 345.00084pt.
  [22] [23 <../artwork/Fig7.pdf>]
-<../artwork/Fig8.pdf, id=210, 1084.05pt x 1084.05pt>
+<../artwork/Fig8.pdf, id=235, 1084.05pt x 1084.05pt>
 File: ../artwork/Fig8.pdf Graphic file (type pdf)
  <use ../artwork/Fig8.pdf>
 Package pdftex.def Info: ../artwork/Fig8.pdf used on input line 281.
 (pdftex.def)             Requested size: 345.0pt x 345.00084pt.
 
 [24] [25 <../artwork/Fig8.pdf>]
-<../artwork/Fig9.pdf, id=226, 722.7pt x 722.7pt>
+<../artwork/Fig9.pdf, id=251, 722.7pt x 722.7pt>
 File: ../artwork/Fig9.pdf Graphic file (type pdf)
  <use ../artwork/Fig9.pdf>
 Package pdftex.def Info: ../artwork/Fig9.pdf used on input line 300.
@@ -745,7 +746,7 @@ Here is how much of TeX's memory you used:
  7735 multiletter control sequences out of 15000+600000
  16671 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,9n,34p,1406b,402s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,9n,34p,1399b,402s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/dncgst/.texmf-var/fonts
 /pk/ljfour/jknappen/ec/tcrm1000.600pk> </home/dncgst/.texmf-var/fonts/pk/ljfour
 /jknappen/ec/ecss1000.600pk> </home/dncgst/.texmf-var/fonts/pk/ljfour/jknappen/
@@ -767,10 +768,10 @@ s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmsy7.pfb>
-Output written on pirronord_rr.pdf (45 pages, 11690798 bytes).
+Output written on pirronord_rr.pdf (45 pages, 13554846 bytes).
 PDF statistics:
- 711 PDF objects out of 1000 (max. 8388607)
- 264 compressed objects within 3 object streams
+ 734 PDF objects out of 1000 (max. 8388607)
+ 276 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
