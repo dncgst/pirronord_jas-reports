@@ -28,7 +28,7 @@ X$integrity <- gsub("Fragment side", "Fragment", X$integrity)
 
 # a) Frequency of patinae on the lithic assemblage
 foo <- X[complete.cases(X$patina),]
-fig2a <- ggplot(foo, aes(x=patina, color=patina)) + geom_bar(fill="grey", show.legend=FALSE) + facet_grid(layer ~ .) + ggtitle("a") + xlab("Patina") + ylab("Count")
+fig2a <- ggplot(foo, aes(x=patina, color=patina)) + geom_bar(fill="grey", show.legend=FALSE) + facet_grid(layer ~ .) + ggtitle("a") + xlab("Patina") + ylab("Count by SU")
 fig2a
 
 # b) Distribution of patinae on the lithic raw materials
@@ -38,7 +38,7 @@ fig2b
 
 # c) Frequency of fractures on the lithic assemblage
 bar <- X[complete.cases(X$integrity),]
-fig2c <- ggplot(bar, aes(x=integrity, color=integrity)) + geom_bar(fill="grey", show.legend=FALSE) + facet_grid(layer ~ .) + ggtitle("c") + xlab("Integrity") + ylab("Count")
+fig2c <- ggplot(bar, aes(x=integrity, color=integrity)) + geom_bar(fill="grey", show.legend=FALSE) + facet_grid(layer ~ .) + ggtitle("c") + xlab("Integrity") + ylab("Count by SU")
 fig2c
 
 # d) Lithic artifact dimensions

@@ -18,7 +18,7 @@ library(spatstat)
 
 Research questions:
 
-Strategy for analysis of multitype point pattern: conditional distribution P(M|X): regard the locations X as fixed or given, and study only the types M attached to these locations.
+> Strategy for analysis of multitype point pattern: conditional distribution P(M|X): regard the locations X as fixed or given, and study only the types M attached to these locations.
 
 > In a conditional analysis [of a spatial case-control study] the [...] locations are treated as fixed covariates, and the desease status is treated as a random variable. [...] The simplest null model is that the desease status of each person is random, independently of other people, with a constant risk of desease (called 'random labelling')
 
@@ -74,3 +74,6 @@ Xp.d <- subset(Xp.d, Xp.d$marks != "Brown")
 Xp.d$marks <- droplevels(Xp.d$marks)
 ```
 
+## Reference
+
+Baddeley, A., Ruback, E., Turner, R., 2015. Spatial Point Patterns: Methodology and Applications with R. Chapman and Hall/CRC Press, London

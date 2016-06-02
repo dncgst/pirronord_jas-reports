@@ -23,7 +23,7 @@ Set first a connection with the PostgreSQL database
 ```{r}
 # Establish connection to PoststgreSQL using RPostgreSQL
 drv <- dbDriver("PostgreSQL")
-con <- dbConnect(drv, dbname="pirronord",host="localhost",port=5432,user="dncgst",password="gnewpost")
+con <- dbConnect(drv, dbname="pirronord",host="localhost",port=5432,user="user",password="passwd")
 # Check connection
 dbListConnections(drv)
 dbGetInfo(drv)

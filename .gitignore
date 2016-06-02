@@ -1,6 +1,6 @@
 ### R files
 .Rhistory
-#.Rdata
+.Rdata
 *-Ex.R
 .Rprofile
 
