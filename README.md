@@ -9,7 +9,7 @@ Ever since their percolation from neighbour disciplines, archaeology has employe
 
 ## Repository DOI
 
-[![DOI](https://zenodo.org/badge/22165/dncgst/pirronord_jas-reports.svg)](https://zenodo.org/badge/latestdoi/22165/dncgst/pirronord_jas-reports)
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.54778.svg)](http://dx.doi.org/10.5281/zenodo.54778)
 
 The files archived at the DOI above are associated with the publication. The files hosted at github.com are the development versions and may have changed since the repository was published.
 
