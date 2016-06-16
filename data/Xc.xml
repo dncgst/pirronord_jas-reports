@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<metadata
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:dcterms="http://purl.org/dc/terms/">
+<dc:title>Subset of records from Pirro Nord 13, SU C</dc:title>
+<dc:creator>Domenico Giusti</dc:creator>
+<dc:subject>Pirro Nord 13</dc:subject>
+<dc:subject>Spatial database</dc:subject>
+<dc:description>Subset of records (lithic artifacts, macrovertebrate and micromammal remains) from the Early Pleistocene site of Pirro Nord 13, sedimentary unit C.</dc:description>
+<dc:publisher>Università degli Studi di Ferrara</dc:publisher>
+<dc:contributor>Marta Arzarello</dc:contributor>
+<dcterms:created xsi:type="dcterms:W3CDTF">2016</dcterms:created>
+<dcterms:dateCopyrighted xsi:type="dcterms:W3CDTF">2016</dcterms:dateCopyrighted>
+<dc:type xsi:type="dcterms:DCMIType">Dataset</dc:type>
+<dc:format xsi:type="dcterms:IMT">text/csv</dc:format>
+<dc:language xsi:type="dcterms:ISO639-3">eng</dc:language>
+<dcterms:temporal xsi:type="dcterms:Period">start=2010;end=2014;</dcterms:temporal>
+<dcterms:spatial xsi:type="dcterms:Point">name=SU C;units=meter;zunits=meter;projection=floating;</dcterms:spatial>
+<dcterms:license>CC BY</dcterms:license>
+<dcterms:rightsholder>Domenico Giusti</dcterms:rightsholder>
+
+</metadata>

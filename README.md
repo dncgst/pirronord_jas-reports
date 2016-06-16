@@ -5,7 +5,7 @@ This repository contains a compendium of data, source code and text associated w
 
 ## Publication abstract
 
-Ever since their percolation from neighbour disciplines, archaeology has employed spatial statistics to unravel, at different scales, past human behaviors from scatters of material culture. However, in the interpretation of the archaeological record, particular attention must be given to disturbance factors that operate in post-depositional processes. In this paper, we answer the need for a specific taphonomic perspectives in spatial analysis by applying point pattern analysis of taphonomic alterations on the faunal and lithic assemblages from the Early Pleistocene site of Pirro~Nord~13, Italy. The site, biochronologically dated between 1.3 and 1.6~Ma~BP, provides evidence for an early hominin presence in Europe. The archaeological and paleontological deposit occurs as filling of a karst structure that is currently exposed. We investigated the distribution of the archaeological and paleontological assemblage, as well as the distribution of identified taphonomic features, in order to evaluate degree and reliability of the spatial association of the lithic artifacts with the faunal remains. Our results contribute to the interpretation of the diagenetic history of Pirro~Nord~13 and support the stratigraphic integrity of the site.
+Ever since their percolation from neighbour disciplines, archaeology has employed spatial statistics to unravel, at different scales, past human behaviors from scatters of material culture. However, in the interpretation of the archaeological record, particular attention must be given to disturbance factors that operate in post-depositional processes. In this paper, we answer the need for a specific taphonomic perspective in spatial analysis by applying point pattern analysis of taphonomic alterations on the faunal and lithic assemblages from the Early Pleistocene site of Pirro~Nord~13, Italy. The site, biochronologically dated between 1.3 and 1.6 Ma BP, provides evidence for an early hominin presence in Europe. The archaeological and paleontological deposits occur as filling of a karst structure that is currently exposed. We investigated the distribution of the archaeological and paleontological assemblages, as well as the distribution of identified taphonomic features, in order to evaluate the degree and reliability of the spatial association of the lithic artifacts with the faunal remains. Our results contribute to the interpretation of the diagenetic history of Pirro~Nord~13 and support the stratigraphic integrity of the site.
 
 ## Repository DOI
 
@@ -19,11 +19,11 @@ D. Giusti (domenico.giusti@uni-tuebingen.de)
 
 ## Licenses
 
-Data: CC-BY-4.0 Copyright: 2016 Domenico Giusti, Marta Arzarello, Cristina Bagnus
+Data: CC-BY-4.0 Copyright: specified in the metadata file (data/filename.xml)
 
-Code: MIT Copyright: 2016 Domenico Giusti
+Code: MIT Copyright: (2016) Domenico Giusti
 
-Text: CC-BY-4.0 Copyright: 2016 Domenico Giusti, Marta Arzarello
+Text: CC-BY-4.0 Copyright: (2016) Domenico Giusti, Marta Arzarello
 
 ## Colophon
 

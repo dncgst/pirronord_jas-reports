@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<metadata
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:dcterms="http://purl.org/dc/terms/">
+<dc:title>Subset of fossil records from Pirro Nord 13</dc:title>
+<dc:creator>Domenico Giusti</dc:creator>
+<dc:subject>Pirro Nord 13</dc:subject>
+<dc:subject>Spatial database</dc:subject>
+<dc:subject>Taphonomy</dc:subject>
+<dc:description>Subset of fossil records (macrovertebrate remains) from the Early Pleistocene site of Pirro Nord 13. The dataset provides taphononic (abrasion, oxidation, weatering, taphorecord) and spatial (x, y, z coordinates) information.</dc:description>
+<dc:publisher>Università degli Studi di Ferrara</dc:publisher>
+<dc:contributor>Cristina Bagnus</dc:contributor>
+<dcterms:created xsi:type="dcterms:W3CDTF">2016</dcterms:created>
+<dcterms:dateCopyrighted xsi:type="dcterms:W3CDTF">2016</dcterms:dateCopyrighted>
+<dc:type xsi:type="dcterms:DCMIType">Dataset</dc:type>
+<dc:format xsi:type="dcterms:IMT">text/csv</dc:format>
+<dc:source>Bagnus, C., 2011. Analisi tafonomica delle associazione a vertebrati del Pleistocene Inferiore di Pirro Nord. Università degli Studi di Torino, Italy (Ph.D. thesis)</dc:source>
+<dc:language xsi:type="dcterms:ISO639-3">eng</dc:language>
+<dcterms:temporal xsi:type="dcterms:Period">start=2007;end=2010;</dcterms:temporal>
+<dcterms:spatial xsi:type="dcterms:Point">name=SU C;units=meter;zunits=meter;projection=floating;</dcterms:spatial>
+<dcterms:license>CC BY</dcterms:license>
+<dcterms:rightsholder>Domenico Giusti</dcterms:rightsholder>
+
+</metadata>
