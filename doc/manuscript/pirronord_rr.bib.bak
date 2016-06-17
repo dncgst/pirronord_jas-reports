@@ -72,12 +72,13 @@
   ISSN                     = {1040-6182}
 }
 
-@Article{Arzarello2014,
+@Article{Arzarello2015,
   Title                    = {The {P}irro {N}ord site ({A}pricena, {F}g, {S}outhern {I}taly) in the context of the first {E}uropean peopling: Convergences and divergences},
   Author                   = {Marta Arzarello and Carlo Peretto and Marie-Hélène Moncel},
   Journal                  = {Quaternary International},
-  Year                     = {2014},
-  Volume                   = {In Press},
+  Year                     = {2015},
+  Pages                    = {255--263},
+  Volume                   = {389},
 
   Doi                      = {10.1016/j.quaint.2014.08.051},
   File                     = {Arzarello2014.pdf:science_article/Arzarello2014.pdf:PDF},
@@ -159,9 +160,7 @@
   Pages                    = {264--296},
   Volume                   = {29},
 
-  Keywords                 = {Spatial Analysis, Point Pattern analysis},
-  Owner                    = {dncgst},
-  Timestamp                = {2016.05.17}
+  Keywords                 = {Spatial Analysis, Point Pattern analysis}
 }
 
 @InCollection{Behrensmeyer1991,
@@ -866,6 +865,18 @@
   Volume                   = {92},
 
   __markedentry            = {[dncgst:]}
+}
+
+@Article{Marwick2016,
+  Title                    = {Computational Reproducibility in Archaeological Research: Basic Principles and a Case Study of Their Implementation},
+  Author                   = {Marwick, Ben},
+  Journal                  = {Journal of Archaeological Method and Theory},
+  Year                     = {2016},
+  Pages                    = {1--27},
+
+  Doi                      = {10.1007/s10816-015-9272-9},
+  File                     = {Marwick2016.pdf:open_science/Marwick2016.pdf:PDF},
+  ISSN                     = {1573-7764}
 }
 
 @Article{McPherron2005,

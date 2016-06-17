@@ -24,9 +24,8 @@
 \usepackage{textcomp}
 
 \usepackage{amsmath}
-%\usepackage{SIunits}
 
-%\usepackage{hyperref}
+\usepackage{hyperref}
 
 \journal{Journal of Archaeological Science: Reports}
 
@@ -237,7 +236,7 @@ Spatial correlations of diagenetic alterations on the lithic and faunal assembla
 
 All the spatial analyses were performed using the \emph{spatstat} package \citep{Baddeley2015} in \textsf{R} statistical software \citep{RCoreTeam2015}.
 
-A repository containing a compendium of data, source code and text is archived at the DOI: 10.5281/zenodo.54778.
+A repository containing a compendium of data, source code and text \citep{Marwick2016} is archived at the DOI: \href{http://dx.doi.org/10.5281/zenodo.55736}{10.5281/zenodo.55736}.
 
 \section{Results}
 
@@ -263,7 +262,7 @@ Fig.~\ref{fig:6}a,d shows the resulting $p-values$ of likelihood ratio scan test
 
 In analyzing a point pattern, it is confounding and it may be impossible to distinguish between clustering and spatial inhomogeneity \citep{Baddeley2015}. Given the context of the site, and the results of our non-parametric analyses, we proceed considering the distributions of finds as the results of cluster homogeneous processes. The bivariate version of the homogeneous $K_{ij}(r)$ and $G_{ij}(r)$ functions allows us to statistically test the hypothesis of aggregation between the types of remains.
 
-In Fig.~\ref{fig:7}, the top line of panels (a,b,c) shows the ordinary estimations of the $K$ function for the three types of finds (Fauna, Lithic and \emph{A.~ruffoi}) from SU C. Panel~\ref{fig:7}a resembles figure~\ref{fig:6}b and indicates statistical significant clustering of the faunal remains for any values of $r$. The lithic assemblage shows as well a significant cluster tendency, for $r>0.1$, while it fails to reject the null hypothesis of CSR for lower values. Instead, the estimated $\hat{K}(r)$ for the micromammals shows aggregation, but, for all values of $r$, we cannot state that the distribution is not random. This result might reflect the random displacement applied to the micromammal point pattern.
+In Fig.~\ref{fig:7}, the top line of panels (a,b,c) shows the ordinary estimations of the $K$ function for the three types of finds (Fauna, Lithic and \emph{A.~ruffoi}) from SU C. Panel~\ref{fig:7}a resembles Fig.~\ref{fig:6}b and indicates statistical significant clustering of the faunal remains for any values of $r$. The lithic assemblage shows as well a significant cluster tendency, for $r>0.1$, while it fails to reject the null hypothesis of CSR for lower values. Instead, the estimated $\hat{K}(r)$ for the micromammals shows aggregation, but, for all values of $r$, we cannot state that the distribution is not random. This result might reflect the random displacement applied to the micromammal point pattern.
 
 The middle and bottom lines of panels in Fig.~\ref{fig:7} show estimations of the homogeneous cross-type $K$ and $G$ functions for all pairs of types $i$ and $j$. Interestingly, Fig.~\ref{fig:7}d suggests positive spatial correlation between lithic and faunal remains at any values of $r>0.05$. The corresponding $G_{ij}(r)$ function measured the cumulative distance from each point of type $i$ (Lithic) to the nearest point of type $j$ (Fauna). It shows (Fig.~\ref{fig:7}g) that the nearest-neighbour distances are significantly shorter than expected, but we cannot reject the hypothesis of independence between fossils and artifacts. However, the short scale of the function suggests that any artifact is surrounded by fossils. This result statistically confirms the stratigraphic association of artifacts and fossils, previously based on field observations. On the other hand, deviations between the $\hat{K}_{ij}(r)$ function and the benchmark $\pi r^2$ suggest segregation between lithics and \emph{A. ruffoi} specimens, but the hypothesis of independence between the two types is more significant (Fig.~\ref{fig:7}e,h). Conversely, the small mammal assemblage is closer to the rest of the fossils than expected for independent distributions, for $r>0.2$. For lower values of $r$, the $K$ and $G$ functions fail to reject the hypothesis of independence.
 
@@ -287,7 +286,7 @@ The top line of panels in Fig.~\ref{fig:8} (a,b,c) shows estimations of the $K(r
 
 To achieve our second objective, namely to evaluate the degree of post-depositional disturbance of the deposit, we first analyzed spatial distribution of oxides on the lithic and faunal assemblages independently, then we moved to a comparative analysis. We are particularly interested in the spatial distribution of Fe-Mn oxides (cases) compared with the absence of them (controls).
 
-Fig.~\ref{fig:4}a does not suggest segregation of patinated and not-patinated lithics. If we perform random labeling of the presence of Fe-Mn (spotted and covering) with its absence in both the stratigraphic units, the outputs of the cross-type function (Fig.~\ref{fig:9}a,~b) show that the observed altered artifacts are, with a $0.01$ level of significance, randomly and independently located in SU C. The positive discrepancy between the estimated $\hat K_{ij}(r)$ and the benchmark $\pi r^2$ indicates aggregation of cases and controls, but it lies within the grey envelope of the \emph{random labeling} hypothesis. Conversely, patinated and non-patinated lithics in SU D appear to be closer to each other than expected for the null hypothesis. In this unit the observed $\hat K_{ij}(r)$ function over-exceeds the envelope at values of $r>0.4 m$, hence it indicates statistically significant aggregation. Such pattern statistically confirms the visual assessment of figure~\ref{fig:4}a. Consequently, oxidized and non-oxidized artifacts most probably occur in SU D well aggregated in space, while their aggregation is not statistically significant in the above unit.
+Fig.~\ref{fig:4}a does not suggest segregation of patinated and not-patinated lithics. If we perform random labeling of the presence of Fe-Mn (spotted and covering) with its absence in both the stratigraphic units, the outputs of the cross-type function (Fig.~\ref{fig:9}a,~b) show that the observed altered artifacts are, with a $0.01$ level of significance, randomly and independently located in SU C. The positive discrepancy between the estimated $\hat K_{ij}(r)$ and the benchmark $\pi r^2$ indicates aggregation of cases and controls, but it lies within the grey envelope of the \emph{random labeling} hypothesis. Conversely, patinated and non-patinated lithics in SU D appear to be closer to each other than expected for the null hypothesis. In this unit the observed $\hat K_{ij}(r)$ function over-exceeds the envelope at values of $r>0.4 m$, hence it indicates statistically significant aggregation. Such pattern statistically confirms the visual assessment of Fig.~\ref{fig:4}a. Consequently, oxidized and non-oxidized artifacts most probably occur in SU D well aggregated in space, while their aggregation is not statistically significant in the above unit.
 
 We could not compare the oxidation patterns between lithics and fossils from SU D, because the taphonomic analysis of \citet{Bagnus2011} did not include fossils from this unit. Thus, we focused our analysis on SU C.
 

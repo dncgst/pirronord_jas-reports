@@ -1,4 +1,4 @@
-\begin{thebibliography}{97}
+\begin{thebibliography}{98}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -378,6 +378,11 @@ López-Ortega, E., Rodríguez, X.~P., Vaquero, M., 2011. {L}ithic refitting and
   movement connections: the {NW} area of level {TD}10-1 at the {G}ran {D}olina
   site ({S}ierra de {A}tapuerca, {B}urgos, {S}pain). Journal of Archaeological
   Science 38~(11), 3112--3121.
+
+\bibitem[{Marwick(2016)}]{Marwick2016}
+Marwick, B., 2016. Computational reproducibility in archaeological research:
+  Basic principles and a case study of their implementation. Journal of
+  Archaeological Method and Theory, 1--27.
 
 \bibitem[{McPherron(2005)}]{McPherron2005}
 McPherron, S.~J., 2005. {A}rtifact orientations and site formation processes

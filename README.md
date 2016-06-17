@@ -25,7 +25,7 @@ Code: MIT Copyright: (2016) Domenico Giusti
 
 Text: CC-BY-4.0 Copyright: (2016) Domenico Giusti, Marta Arzarello
 
-## Colophon
+## System info
 
 R version 3.3.0 (2016-05-03)
 Platform: x86_64-pc-linux-gnu (64-bit)
