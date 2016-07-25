@@ -25,7 +25,7 @@ Source code: MIT Copyright: (2016) Domenico Giusti
 
 Text: CC-BY-4.0 Copyright: (2016) Domenico Giusti, Marta Arzarello
 
-## System info
+## Session info
 
 R version 3.3.0 (2016-05-03)
 
