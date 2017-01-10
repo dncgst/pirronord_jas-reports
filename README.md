@@ -1,7 +1,7 @@
 pirronord_jas-reports
 =====================
 
-This repository contains a compendium of data (/data), source code (/src) and text (/doc) associated with the publication "The need for a taphonomic perspective in spatial analysis: formation processes at the Early Pleistocene site of Pirro Nord (P13), Apricena, Italy" authored by D. Giusti and M. Arzarello (DOI: 10.1016/j.jasrep.2016.06.014).
+This repository contains an open licensed compendium of data (`/data`), source code (`/src`) and text (`/doc`) associated with the publication "The need for a taphonomic perspective in spatial analysis: formation processes at the Early Pleistocene site of Pirro Nord (P13), Apricena, Italy", authored by D. Giusti and M. Arzarello (DOI: [10.1016/j.jasrep.2016.06.014](http://dx.doi.org/10.1016/j.jasrep.2016.06.014)). Preprint of the accepted manuscript is available open access on author's personal website: [gnewarchaeology.it](http://www.gnewarchaeology.it). Refresh with published article after an embargo period of 36 months from the date the article is formally published online.
 
 ## Publication abstract
 
@@ -15,15 +15,15 @@ The files archived at the DOI above are associated with the publication. The fil
 
 ## Repository author
 
-D. Giusti (domenico.giusti@uni-tuebingen.de)
+D. Giusti (<dncgst@gnewarchaeology.it>)
 
-## Licenses
+## Repository licences
 
-Data: CC-BY-4.0 Copyright: specified in the metadata files (data/filename.xml)
+Data: [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) Copyright: specified in the metadata files (`data/filename.xml`)
 
-Source code: MIT Copyright: (2016) Domenico Giusti
+Source code: [MIT](https://opensource.org/licenses/MIT) Copyright holder: (2016) Domenico Giusti
 
-Text: CC-BY-4.0 Copyright: (2016) Domenico Giusti, Marta Arzarello
+Text: [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) Copyright holders: (2016) Domenico Giusti, Marta Arzarello
 
 ## Session info
 
