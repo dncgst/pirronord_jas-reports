@@ -1,7 +1,7 @@
 pirronord_jas-reports
 =====================
 
-This repository contains an open licensed compendium of data (`/data`), source code (`/src`) and text (`/doc`) associated with the publication "The need for a taphonomic perspective in spatial analysis: formation processes at the Early Pleistocene site of Pirro Nord (P13), Apricena, Italy", authored by D. Giusti and M. Arzarello (DOI: [10.1016/j.jasrep.2016.06.014](http://dx.doi.org/10.1016/j.jasrep.2016.06.014)). Preprint of the accepted manuscript is available open access on author's personal website: [gnewarchaeology.it](http://www.gnewarchaeology.it). Refresh with published article after an embargo period of 36 months from the date the article is formally published online.
+This repository contains an open licensed compendium of data (`/data`), source code (`/src`) and text (`/doc`) associated with the publication "The need for a taphonomic perspective in spatial analysis: formation processes at the Early Pleistocene site of Pirro Nord (P13), Apricena, Italy", authored by D. Giusti and M. Arzarello (DOI: [10.1016/j.jasrep.2016.06.014](http://dx.doi.org/10.1016/j.jasrep.2016.06.014)). Preprint of the accepted manuscript is available open access on [OSF](http://dx.doi.org/10.17605/OSF.IO/T78A2). Refresh with published article after an embargo period of 36 months from the date the article is formally published online.
 
 ## Publication abstract
 
