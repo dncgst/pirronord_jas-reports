@@ -1,0 +1,550 @@
+\begin{thebibliography}{98}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Anderson and Burke(2008)}]{Anderson2008}
+Anderson, K.~L., Burke, A., 2008. {R}efining the definition of cultural levels
+  at {K}arabi {T}amchin: a quantitative approach to vertical intra-site spatial
+  analysis. Journal of Archaeological Science 35~(8), 2274--2285.
+
+\bibitem[{Arzarello et~al.(2007)Arzarello, Marcolini, Pavia, Pavia, Petronio,
+  Petrucci, Rook, and Sardella}]{Arzarello2007}
+Arzarello, M., Marcolini, F., Pavia, G., Pavia, M., Petronio, C., Petrucci, M.,
+  Rook, L., Sardella, R., 2007. {E}vidence of earliest human occurrence in
+  {E}urope: the site of {P}irro {N}ord ({S}outhern {I}taly).
+  Naturwissenschaften 94, 107--112.
+
+\bibitem[{Arzarello et~al.(2009)Arzarello, Marcolini, Pavia, Pavia, Petronio,
+  Petrucci, Rook, and Sardella}]{Arzarello2009}
+Arzarello, M., Marcolini, F., Pavia, G., Pavia, M., Petronio, C., Petrucci, M.,
+  Rook, L., Sardella, R., 2009. L'industrie lithique du site {P}léistocène
+  inférieur de {P}irro {N}ord ({A}pricena, {I}talie du sud): une occupation
+  humaine entre 1,3 et 1,7{M}a. L'Anthropologie 113~(1), 47--58.
+
+\bibitem[{Arzarello et~al.(2012)Arzarello, Pavia, Peretto, Petronio, and
+  Sardella}]{Arzarello2012}
+Arzarello, M., Pavia, G., Peretto, C., Petronio, C., Sardella, R., 2012.
+  {E}vidence of an {E}arly {P}leistocene hominin presence at {P}irro {N}ord
+  ({A}pricena, {F}oggia, southern {I}taly): {P}13 site. Quaternary
+  International 267, 56--61.
+
+\bibitem[{Arzarello and Peretto(2010)}]{Arzarello2010}
+Arzarello, M., Peretto, C., 2010. {O}ut of {A}frica: {T}he first evidence of
+  {I}talian peninsula occupation. Quaternary International 223–224, 65--70.
+
+\bibitem[{Arzarello et~al.(2015)Arzarello, Peretto, and Moncel}]{Arzarello2015}
+Arzarello, M., Peretto, C., Moncel, M.-H., 2015. The {P}irro {N}ord site
+  ({A}pricena, {F}g, {S}outhern {I}taly) in the context of the first {E}uropean
+  peopling: Convergences and divergences. Quaternary International 389,
+  255--263.
+
+\bibitem[{Baddeley et~al.(2015)Baddeley, Rubak, and Turner}]{Baddeley2015}
+Baddeley, A., Rubak, E., Turner, R., 2015. Spatial Point Patterns: Methodology
+  and Applications with R, in press Edition. Chapman and Hall/CRC Press,
+  London.
+
+\bibitem[{Bagnus(2011)}]{Bagnus2011}
+Bagnus, C., 2011. {A}nalisi tafonomica delle associazione a vertebrati del
+  {P}leistocene {I}nferiore di {P}irro {N}ord. Ph.D. thesis, Università degli
+  Studi di Torino, Italy.
+
+\bibitem[{Bailey and Gatrell(1995)}]{Bailey1995}
+Bailey, T., Gatrell, A., 1995. Interactive spatial data analysis. Longman
+  Scientific and Technical, Harlow Essex, England.
+
+\bibitem[{Bartlett(1963)}]{Bartlett1963}
+Bartlett, M.~S., 1963. The spectral analysis of point processes. Journal of the
+  Royal Statistical Society, Series B 29, 264--296.
+
+\bibitem[{Behrensmeyer(1978)}]{Behrensmeyer1978}
+Behrensmeyer, A.~K., 1978. Taphonomic and ecologic information from bone
+  weathering. Paleobiology 4~(2), 150--162.
+
+\bibitem[{Behrensmeyer(1991)}]{Behrensmeyer1991}
+Behrensmeyer, A.~K., 1991. Terrestrial vertebrate accumulations. In: Allison,
+  P., Briggs, D. (Eds.), Taphonomy: Releasing the Data Locked in the Fossil
+  Record: Topics in Geobiology. Vol.~9. Plenum Press, New York, p. 291–327.
+
+\bibitem[{Benito-Calvo and de~la Torre(2011)}]{Benito-Calvo2011}
+Benito-Calvo, A., de~la Torre, I., 2011. {A}nalysis of orientation patterns in
+  {O}lduvai {B}ed {I} assemblages using {GIS} techniques: {I}mplications for
+  site formation processes. Journal of Human Evolution 61~(1), 50--60.
+
+\bibitem[{Bernatchez(2010)}]{Bernatchez2010}
+Bernatchez, J.~A., 2010. {T}aphonomic implications of orientation of plotted
+  finds from {P}innacle {P}oint 13{B} ({M}ossel {B}ay, {W}estern {C}ape
+  {P}rovince, {S}outh {A}frica). Journal of Human Evolution 59~(3–4),
+  274--288.
+
+\bibitem[{Bertok et~al.(2013)Bertok, Masini, Donato, Martire, Pavia, Zunino,
+  and Pavia}]{Bertok2013}
+Bertok, C., Masini, F., Donato, V.~D., Martire, L., Pavia, M., Zunino, M.,
+  Pavia, G., 2013. Stratigraphic framework of the type-locality of {P}irro
+  {N}ord mammal {F}aunal {U}nit ({L}ate {V}illafranchian, {A}pricena, south-
+  eastern {I}taly). Palaeontographica 298~(6), 5–17.
+
+\bibitem[{Bertran et~al.(1997)Bertran, Hetù, Texier, and Steijn}]{Bertran1997}
+Bertran, P., Hetù, B., Texier, J.-P., Steijn, H.~V., 1997. {F}abric
+  characteristics of subaerial slope deposits. Sedimentology 44~(1), 1--16.
+
+\bibitem[{Bertran et~al.(2012)Bertran, Lenoble, Todisco, Desrosiers, and
+  Sørensen}]{Bertran2012}
+Bertran, P., Lenoble, A., Todisco, D., Desrosiers, P.~M., Sørensen, M., 2012.
+  {P}article size distribution of lithic assemblages and taphonomy of
+  {P}alaeolithic sites. Journal of Archaeological Science 39~(10), 3148--3166.
+
+\bibitem[{Bertran and Texier(1995)}]{Bertran1995}
+Bertran, P., Texier, J.-P., 1995. {F}abric {A}nalysis: {A}pplication to
+  {P}aleolithic {S}ites. Journal of Archaeological Science 22~(4), 521--535.
+
+\bibitem[{Bertran et~al.(2006)Bertran, Émilie Claud, Detrain, Lenoble, Masson,
+  and Vallin}]{Bertran2006}
+Bertran, P., Émilie Claud, Detrain, L., Lenoble, A., Masson, B., Vallin, L.,
+  2006. Composition granulométrique des assemblages lithiques, application à
+  l’étude taphonomique des sites paléolithiques. Paléo 18, 7--36.
+
+\bibitem[{Bevan and Conolly(2006)}]{Bevan2006}
+Bevan, A., Conolly, J., 2006. Multiscalar approaches to settlement pattern
+  analysis. In: Lock, G., Molyneaux, B. (Eds.), Confronting Scale in
+  Archaeology: Issues of Theory and Practice. Springer, New York, pp. 217--234.
+
+\bibitem[{Bevan and Conolly(2009)}]{Bevan2009}
+Bevan, A., Conolly, J., 2009. {M}odelling spatial heterogeneity and
+  nonstationarity in artifact-rich landscapes. Journal of Archaeological
+  Science 36~(4), 956--964.
+
+\bibitem[{Bevan and Conolly(2013)}]{Bevan2013c}
+Bevan, A., Conolly, J., 2013. Mediterranean Islands, Fragile Communities and
+  Persistent Landscapes: Antikythera in Long-term Perspective. Cambridge
+  University Press, Cambridge.
+
+\bibitem[{Bevan et~al.(2013)Bevan, Crema, Li, and Palmisano}]{Bevan2013a}
+Bevan, A., Crema, E., Li, X., Palmisano, A., 2013. Intensities, interactions,
+  and uncertainties: Some new approaches to archaeological distributions. In:
+  Bevan, A., Lake, M. (Eds.), Computational Approaches to Archaeological
+  Spaces. Left Coast Press, Walnut Creek, pp. 27--52.
+
+\bibitem[{Bevan and Wilson(2013)}]{Bevan2013}
+Bevan, A., Wilson, A., 2013. {M}odels of settlement hierarchy based on partial
+  evidence. Journal of Archaeological Science 40~(5), 2415--2427.
+
+\bibitem[{Burroni et~al.(2002)Burroni, Donahue, Pollard, and
+  Mussi}]{Burroni2002}
+Burroni, D., Donahue, R.~E., Pollard, A., Mussi, M., 2002. The surface
+  alteration features of flint artefacts as a record of environmental
+  processes. Journal of Archaeological Science 29~(11), 1277--1287.
+
+\bibitem[{Butzer(1982)}]{Butzer1982}
+Butzer, K., 1982. {A}rchaeology as {H}uman {E}cology: {M}ethod and {T}heory for
+  a {C}ontextual {A}pproach. Cambridge University Press, New York.
+
+\bibitem[{Carbonell et~al.(2008)Carbonell, Bermudez~de Castro, Pares,
+  Perez-Gonzalez, Cuenca-Bescos, Olle, Mosquera, Huguet, van~der Made, Rosas,
+  Sala, Vallverdu, Garcia, Granger, Martinon-Torres, Rodriguez, Stock, Verges,
+  Allue, Burjachs, Caceres, Canals, Benito, Diez, Lozano, Mateos, Navazo,
+  Rodriguez, Rosell, and Arsuaga}]{Carbonell2008}
+Carbonell, E., Bermudez~de Castro, J.~M., Pares, J.~M., Perez-Gonzalez, A.,
+  Cuenca-Bescos, G., Olle, A., Mosquera, M., Huguet, R., van~der Made, J.,
+  Rosas, A., Sala, R., Vallverdu, J., Garcia, N., Granger, D.~E.,
+  Martinon-Torres, M., Rodriguez, X.~P., Stock, G.~M., Verges, J.~M., Allue,
+  E., Burjachs, F., Caceres, I., Canals, A., Benito, A., Diez, C., Lozano, M.,
+  Mateos, A., Navazo, M., Rodriguez, J., Rosell, J., Arsuaga, J.~L., 2008.
+  {T}he first hominin of {E}urope. Nature 452, 465--469.
+
+\bibitem[{Carrer(2015)}]{Carrer2015}
+Carrer, F., 2015. Interpreting intra-site spatial patterns in seasonal
+  contexts: an ethnoarchaeological case study from the western alps. Journal of
+  Archaeological Method and Theory, 1--25.
+
+\bibitem[{Cobo-Sánchez et~al.(2014)Cobo-Sánchez, Aramendi, and
+  Domínguez-Rodrigo}]{Cobo-Sanchez2014}
+Cobo-Sánchez, L., Aramendi, J., Domínguez-Rodrigo, M., 2014. Orientation
+  patterns of wildebeest bones on the lake {M}asek floodplain ({S}erengeti,
+  {T}anzania) and their relevance to interpret anisotropy in the {O}lduvai
+  lacustrine floodplain. Quaternary International 322–323~(0), 277--284.
+
+\bibitem[{Crema(2015)}]{Crema2015}
+Crema, E.~R., 2015. Time and probabilistic reasoning in settlement analysis.
+  In: Juan A.~Barcelo, I.~B. (Ed.), Mathematics and Archaeology. CRC Press,
+  Boca Raton, FL, pp. 314--334.
+
+\bibitem[{Crema et~al.(2010)Crema, Bevan, and Lake}]{Crema2010}
+Crema, E.~R., Bevan, A., Lake, M.~W., 2010. {A} probabilistic framework for
+  assessing spatio-temporal point patterns in the archaeological record.
+  Journal of Archaeological Science 37~(5), 1118--1130.
+
+\bibitem[{Crema and Bianchi(2013)}]{Crema2013}
+Crema, E.~R., Bianchi, E., 2013. Looking for patterns in the noise: non-site
+  spatial-analysis in {S}ebkha {K}elbia. In: Mulazzani, S. (Ed.), Le Capsien de
+  hergla (Tunisie). Culture, environnement et économie. Africa Magna Verlag,
+  Frankfurt, pp. 385--395.
+
+\bibitem[{Crochet et~al.(2009)Crochet, Welcomme, Ivorra, Ruffet, Boulbes,
+  Capdevila, Claude, Firmat, Métais, Michaux, and Pickford}]{Crochet2009}
+Crochet, J.-Y., Welcomme, J.-L., Ivorra, J., Ruffet, G., Boulbes, N.,
+  Capdevila, R., Claude, J., Firmat, C., Métais, G., Michaux, J., Pickford,
+  M., 2009. {U}ne nouvelle faune de vertébrés continentaux, associée à des
+  artefacts dans le {P}léistocène inférieur de l’{H}érault ({S}ud de la
+  {F}rance), vers 1,57 {M}a. Comptes Rendus Palevol 8~(8), 725--736.
+
+\bibitem[{de~la Torre and Benito-Calvo(2013)}]{Torre2013a}
+de~la Torre, I., Benito-Calvo, A., 2013. {A}pplication of {GIS} methods to
+  retrieve orientation patterns from imagery; a case study from {B}eds {I} and
+  {II}, {O}lduvai {G}orge ({T}anzania). Journal of Archaeological Science
+  40~(5), 2446--2457.
+
+\bibitem[{Despriée et~al.(2006)Despriée, Gageonnet, Voinchet, Bahain,
+  Falguères, Varache, Courcimault, and Dolo}]{Despriee2006}
+Despriée, J., Gageonnet, R., Voinchet, P., Bahain, J.-J., Falguères, C.,
+  Varache, F., Courcimault, G., Dolo, J.-M., 2006. Une occupation humaine au
+  {P}léistocène inférieur sur la bordure nord du {M}assif central. Comptes
+  Rendus Palevol 5~(6), 821--828.
+
+\bibitem[{Despriée et~al.(2009)Despriée, Voinchet, Gageonnet, Dépont,
+  Bahain, Falguères, Tissoux, Dolo, and Courcimault}]{Despriee2009}
+Despriée, J., Voinchet, P., Gageonnet, R., Dépont, J., Bahain, J.-J.,
+  Falguères, C., Tissoux, H., Dolo, J.-M., Courcimault, G., 2009. {L}es vagues
+  de peuplements humains au {P}léistocène inférieur et moyen dans le bassin
+  de la {L}oire moyenne, région {C}entre, {F}rance. {A}pports de l’étude
+  des formations fluviatiles. L'Anthropologie 113~(1), 125--167.
+
+\bibitem[{Despriée et~al.(2010)Despriée, Voinchet, Tissoux, Moncel,
+  Arzarello, Robin, Bahain, Falguères, Courcimault, Dépont, Gageonnet,
+  Marquer, Messager, Abdessadok, and Puaud}]{Despriee2010}
+Despriée, J., Voinchet, P., Tissoux, H., Moncel, M.-H., Arzarello, M., Robin,
+  S., Bahain, J.-J., Falguères, C., Courcimault, G., Dépont, J., Gageonnet,
+  R., Marquer, L., Messager, E., Abdessadok, S., Puaud, S., 2010. {L}ower and
+  middle {P}leistocene human settlements in the {M}iddle {L}oire {R}iver
+  {B}asin, {C}entre {R}egion, {F}rance. Quaternary International 223–224,
+  345--359.
+
+\bibitem[{Dibble et~al.(1997)Dibble, Chase, McPherron, and
+  Tuffreau}]{Dibble1997}
+Dibble, H.~L., Chase, P.~G., McPherron, S.~P., Tuffreau, A., Oct. 1997. Testing
+  the reality of a "living floor" with archaeological data. American Antiquity
+  62~(4), 629--651.
+
+\bibitem[{Diggle(1985)}]{Diggle1985}
+Diggle, P., 1985. A kernel method for smoothing point process data. Applied
+  Statistics (Journal of the Royal Statistical Society, Series C) 34,
+  138–147.
+
+\bibitem[{Diggle(2003)}]{Diggle2003}
+Diggle, P., 2003. Statistical analysis of spatial point patterns. Hodder
+  Arnold, London.
+
+\bibitem[{Djindjian(1999)}]{Djindjian1999}
+Djindjian, F., 1999. {L}'analyse spatiale de l'habitat: un état de l'art.
+  Archeologia e Calcolatori X, 17--32.
+
+\bibitem[{Domínguez-Rodrigo et~al.(2014{\natexlab{a}})Domínguez-Rodrigo,
+  Bunn, Mabulla, Baquedano, Uribelarrea, Pérez-González, Gidna, Yravedra,
+  Diez-Martin, Egeland, Barba, Arriaza, Organista, and
+  Ansón}]{Dominguez-Rodrigo2014c}
+Domínguez-Rodrigo, M., Bunn, H., Mabulla, A., Baquedano, E., Uribelarrea, D.,
+  Pérez-González, A., Gidna, A., Yravedra, J., Diez-Martin, F., Egeland, C.,
+  Barba, R., Arriaza, M., Organista, E., Ansón, M., 2014{\natexlab{a}}. {O}n
+  meat eating and human evolution: {A} taphonomic analysis of {BK4b} ({U}pper
+  {B}ed {II}, {O}lduvai {G}orge, {T}anzania), and its bearing on hominin
+  megafaunal consumption. Quaternary International 322–323, 129--152.
+
+\bibitem[{Domínguez-Rodrigo et~al.(2014{\natexlab{b}})Domínguez-Rodrigo,
+  Diez-Martín, Yravedra, Barba, Mabulla, Baquedano, Uribelarrea, Sánchez, and
+  Eren}]{Dominguez-Rodrigo2014b}
+Domínguez-Rodrigo, M., Diez-Martín, F., Yravedra, J., Barba, R., Mabulla, A.,
+  Baquedano, E., Uribelarrea, D., Sánchez, P., Eren, M.~I.,
+  2014{\natexlab{b}}. {S}tudy of the {SHK} {M}ain {S}ite faunal assemblage,
+  {O}lduvai {G}orge, {T}anzania: {I}mplications for {B}ed {II} taphonomy,
+  paleoecology, and hominin utilization of megafauna. Quaternary International
+  322–323, 153--166.
+
+\bibitem[{Domínguez-Rodrigo et~al.(2011)Domínguez-Rodrigo, Fernández-López,
+  and Alcalá}]{Dominguez-Rodrigo2011}
+Domínguez-Rodrigo, M., Fernández-López, S., Alcalá, L., 2011. {H}ow {C}an
+  {T}aphonomy {B}e {D}efined in the {XXI} {C}entury? Journal of Taphonomy
+  9~(1), 1--13.
+
+\bibitem[{Domínguez-Rodrigo and Pickering(2010)}]{Dominguez-Rodrigo2010}
+Domínguez-Rodrigo, M., Pickering, T., 2010. A multivariate approach for
+  discriminating bone accumulations created by spotted hyenas and leopards:
+  harnessing actualistic data from east and southern {A}frica. Journal of
+  Taphonomy 8~(2-3), 155--179.
+
+\bibitem[{Domínguez-Rodrigo et~al.(2014{\natexlab{c}})Domínguez-Rodrigo,
+  Uribelarrea, Santonja, Bunn, García-Pérez, Pérez-González, Panera,
+  Rubio-Jara, Mabulla, Baquedano, Yravedra, and
+  Diez-Martín}]{Dominguez-Rodrigo2014}
+Domínguez-Rodrigo, M., Uribelarrea, D., Santonja, M., Bunn, H.,
+  García-Pérez, A., Pérez-González, A., Panera, J., Rubio-Jara, S.,
+  Mabulla, A., Baquedano, E., Yravedra, J., Diez-Martín, F.,
+  2014{\natexlab{c}}. Autochthonous anisotropy of archaeological materials by
+  the action of water: experimental and archaeological reassessment of the
+  orientation patterns at the {O}lduvai sites. Journal of Archaeological
+  Science 41, 44--68.
+
+\bibitem[{Díez et~al.(1999)Díez, Fernández-Jalvo, Rossel, and
+  Cáceres}]{Diez1999}
+Díez, J.~C., Fernández-Jalvo, J., Rossel, J., Cáceres, I., 1999.
+  Zooarchaeology and taphonomy of {A}urora {S}tratum ({G}ran {D}olina, {S}ierra
+  de {A}tapuerca, {S}pain). Journal of Human Evolution 37, 623–652.
+
+\bibitem[{Efremov(1940)}]{Efremov1940}
+Efremov, I.~A., 1940. Taphonomy: a new branch of paleontology. Pan American
+  Geologist 74, 81--93.
+
+\bibitem[{Eve and Crema(2014)}]{Eve2014}
+Eve, S.~J., Crema, E.~R., 2014. {A} {H}ouse with a {V}iew? {M}ulti-model
+  inference, visibility fields, and point process analysis of a {B}ronze {A}ge
+  settlement on {L}eskernick {H}ill ({C}ornwall, {UK}). Journal of
+  Archaeological Science 43, 267--277.
+
+\bibitem[{Fern{\'{a}}ndez-L{\'{o}}pez(2000)}]{Fernandez-Lopez2000}
+Fern{\'{a}}ndez-L{\'{o}}pez, S.~R., 2000. Temas de Tafonomía. Departamento de
+  Paleontología, Universidad Complutense de Madrid.
+
+\bibitem[{Fernández-López(1987)}]{Fernandez-Lopez1987}
+Fernández-López, S.~R., 1987. Unidades registráticas, biocronología y
+  geocronología. Revista Espa\~{n}ola de Paleontología 2, 65--85.
+
+\bibitem[{Fernández-López(1991)}]{Fernandez-Lopez1991}
+Fernández-López, S.~R., 1991. Taphonomic concepts for a theoretical
+  biochronology. Revista Espa\~{n}ola de Paleontología 6, 37--49.
+
+\bibitem[{Fernández-López(2007)}]{Fernandez-Lopez2007}
+Fernández-López, S.~R., 2007. {A}mmonoid taphonomy, palaeoenvironments and
+  sequence stratigraphy at the {B}ajocian/{B}athonian boundary on the {B}as
+  {A}uran area ({S}ubalpine {B}asin, {SE} {F}rance). Lethaia 40, 377--391.
+
+\bibitem[{Fernández-López(2011)}]{Fernandez-Lopez2011}
+Fernández-López, S.~R., 2011. {T}aphonomic analysis and sequence stratigraphy
+  of the {A}lbarracinites beds (lower {B}ajocian, {I}berian {R}ange, {S}pain).
+  {A}n example of shallow condensed section. Bulletin de la Société
+  Géologique de France 182, 405--415.
+
+\bibitem[{Gatrell et~al.(1996)Gatrell, Bailey, Diggle, and
+  Rowlingson}]{Gatrell1996}
+Gatrell, A.~C., Bailey, T.~C., Diggle, P.~J., Rowlingson, B.~S., 1996. Spatial
+  point pattern analysis and its application in geographical epidemiology.
+  Transactions of the Institute of British Geographers 21, 256--274.
+
+\bibitem[{Goreaud and Pélissier(2003)}]{Goreaud2003}
+Goreaud, F., Pélissier, R., October 2003. Avoiding misinterpretation of biotic
+  interactions with the intertype $k_{12}$-function: population independence
+  vs. random labelling hypotheses. Journal of Vegetation Science 14~(5),
+  681–692.
+
+\bibitem[{Hill(1982)}]{Hill1982}
+Hill, C.~A., 1982. Origin of black deposits in caves. National Speleological
+  Society Bulletin 44, 15--19.
+
+\bibitem[{Hodder and Orton(1976)}]{Hodder1976}
+Hodder, I., Orton, C., 1976. {S}patial {A}nalysis in {A}rchaeology. New Studies
+  in Archaeology. Cambridge University Press, Cambridge.
+
+\bibitem[{Kos(2003)}]{Kos2003}
+Kos, A.~M., 2003. Characterization of post-depositional taphonomic processes in
+  the accumulation of mammals in a pitfall cave deposit from southeastern
+  {A}stralia. Journal of Archaeological Science 30, 781–796.
+
+\bibitem[{Lenoble and Bertran(2004)}]{Lenoble2004}
+Lenoble, A., Bertran, P., 2004. {F}abric of {P}alaeolithic levels: methods and
+  implications for site formation processes. Journal of Archaeological Science
+  31~(4), 457--469.
+
+\bibitem[{Lopez-García et~al.(2015)Lopez-García, Luzi, Berto, Peretto, and
+  Arzarello}]{Lopez-Garcia2015}
+Lopez-García, J.~M., Luzi, E., Berto, C., Peretto, C., Arzarello, M., 2015.
+  Chronological context of the first hominin occurrence in southern {E}urope:
+  the \emph{{A}llophaiomys ruffoi} ({A}rvicolinae, {R}odentia, {M}ammalia) from
+  {P}irro 13 ({P}irro {N}ord, {A}pulia, southwestern {I}taly). Quaternary
+  Science Reviews 107, 260--266.
+
+\bibitem[{Lumley et~al.(1988)Lumley, Krzepkowska, and Echassoux}]{Lumley1988}
+Lumley, H., Krzepkowska, A., Echassoux, A., 1988. L'industrie du {P}leistocene
+  inferieur de la grotte du {V}allonnet, {R}oquebrune-{C}ap {M}artin, {A}lpes
+  {M}aritimes. L'Anthropologie 92, 501–614.
+
+\bibitem[{López-González et~al.(2006)López-González, Grandal-d'Anglade, and
+  Vidal-Romaní}]{Lopez-Gonzalez2006}
+López-González, F., Grandal-d'Anglade, A., Vidal-Romaní, J.~R., 2006.
+  Deciphering bone depositional sequences in caves through the study of
+  manganese coatings. Journal of Archaeological Science 33~(5), 707--717.
+
+\bibitem[{López-Ortega et~al.(2011)López-Ortega, Rodríguez, and
+  Vaquero}]{Lopez-Ortega2011}
+López-Ortega, E., Rodríguez, X.~P., Vaquero, M., 2011. {L}ithic refitting and
+  movement connections: the {NW} area of level {TD}10-1 at the {G}ran {D}olina
+  site ({S}ierra de {A}tapuerca, {B}urgos, {S}pain). Journal of Archaeological
+  Science 38~(11), 3112--3121.
+
+\bibitem[{Marwick(2016)}]{Marwick2016}
+Marwick, B., 2016. Computational reproducibility in archaeological research:
+  Basic principles and a case study of their implementation. Journal of
+  Archaeological Method and Theory, 1--27.
+
+\bibitem[{McPherron(2005)}]{McPherron2005}
+McPherron, S.~J., 2005. {A}rtifact orientations and site formation processes
+  from total station proveniences. Journal of Archaeological Science 32~(7),
+  1003--1014.
+
+\bibitem[{Ohser(1983)}]{Ohser1983}
+Ohser, J., 1983. On estimators for the reduced second moment measure of point
+  processes. Mathematische Operationsforschung und Statistik, series Statistics
+  14, 63--71.
+
+\bibitem[{Openshaw(1996)}]{Openshaw1996}
+Openshaw, S., 1996. Developing {GIS}-relevant zone-based spatial analysis
+  methods. In: Longley, P., Batty, M. (Eds.), Spatial analysis: modelling in a
+  GIS environment. Geoinformation International, London, pp. 55--73.
+
+\bibitem[{Ord(1972)}]{Ord1972}
+Ord, J.~K., 1972. Density estimation and tests for randomness, using distance
+  methods. Draft for lecture to Advanced Institute on statistical ecology in
+  the United States, The Pennsylvania State University, (Mimeo).
+
+\bibitem[{Orton(1982)}]{Orton1982}
+Orton, C., 1982. Stochastic process and archaeological mechanism in spatial
+  analysis. Journal of Archaeological Science 9~(1), 1--23.
+
+\bibitem[{Orton(2004)}]{Orton2004}
+Orton, C., 2004. {P}oint pattern analysis revisited. Archeologia e Calcolatori
+  15, 299--315.
+
+\bibitem[{Parés et~al.(2006)Parés, Pérez-González, Rosas, Benito,
+  de~Castro, Carbonell, and Huguet}]{Pares2006}
+Parés, J.~M., Pérez-González, A., Rosas, A., Benito, A., de~Castro, J.~B.,
+  Carbonell, E., Huguet, R., 2006. Matuyama-age lithic tools from the {S}ima
+  del {E}lefante site, {A}tapuerca (northern {S}pain). Journal of Human
+  Evolution 50~(2), 163--169.
+
+\bibitem[{Petraglia and Nash(1987)}]{Petraglia1987}
+Petraglia, M.~D., Nash, D.~T., 1987. The impact of fluvial processes on
+  experimental sites. In: Nash, D.~T., Petraglia, M.~D. (Eds.), Natural
+  formation processes and the archaeological record. Vol. 352 of International
+  Series. British Archaeological Reports, Oxford, pp. 108--130.
+
+\bibitem[{Petraglia and Potts(1994)}]{Petraglia1994}
+Petraglia, M.~D., Potts, R., 1994. Water {F}low and the {F}ormation of {E}arly
+  {P}leistocene {A}rtifact {S}ites in {O}lduvai {G}orge, {T}anzania. Journal of
+  Anthropological Archaeology 13~(3), 228--254.
+
+\bibitem[{{R Core Team}(2015)}]{RCoreTeam2015}
+{R Core Team}, 2015. R: A Language and Environment for Statistical Computing. R
+  Foundation for Statistical Computing, Vienna, Austria.
+
+\bibitem[{Ripley(1988)}]{Ripley1988}
+Ripley, B., 1988. Statistical inference for spatial processes. Cambridge
+  University Press.
+
+\bibitem[{Ripley(1976)}]{Ripley1976}
+Ripley, B.~D., 1976. The second-order analysis of stationary point processes.
+  Journal of Applied Probability 13~(2), 255--266.
+
+\bibitem[{Ripley(1977)}]{Ripley1977}
+Ripley, B.~D., 1977. Modelling spatial patterns. Journal of the Royal
+  Statistical Society, series B 39, 172–212.
+
+\bibitem[{Robert and Casella(2004)}]{Robert2004}
+Robert, C., Casella, G., 2004. Monte Carlo Statistical Methods, second edition
+  Edition. Springer Texts in Statistics. Springer New York, New York.
+
+\bibitem[{Rottländer(1975)}]{Rottlander1975}
+Rottländer, R., 1975. The formation of patina on flint. Archaeometry 17~(1),
+  106--110.
+
+\bibitem[{Schick(1984)}]{Schick1984}
+Schick, K.~D., 1984. Processes of {P}aleolithic site formation: an experimental
+  study. Ph.D. thesis, University of California, Berkeley, US.
+
+\bibitem[{Schick(1986)}]{Schick1986}
+Schick, K.~D., 1986. Stone Age sites in the making: experiments in the
+  formation and transformation of archaeological occurrences. Vol. 319 of
+  International Series. British Archaeological Reports, Oxford.
+
+\bibitem[{Schiffer(1972)}]{Schiffer1972}
+Schiffer, M.~B., 1972. Archaeological {C}ontext and {S}ystemic {C}ontext.
+  American Antiquity 37~(2), 156--165.
+
+\bibitem[{Schiffer(1983)}]{Schiffer1983}
+Schiffer, M.~B., 1983. Toward the identification of formation processes.
+  American Antiquity 48~(4), 675--706.
+
+\bibitem[{Schiffer(1987)}]{Schiffer1987}
+Schiffer, M.~B., 1987. Formation processes of the archaeological record.
+  University of New Mexico Press, Albuquerque.
+
+\bibitem[{Sisk and Shea(2008)}]{Sisk2008}
+Sisk, M.~L., Shea, J.~J., 2008. Intrasite spatial variation of the {O}mo
+  {K}ibish {M}iddle {S}tone {A}ge assemblages: {A}rtifact refitting and
+  distribution patterns. Journal of Human Evolution 55~(3), 486--500.
+
+\bibitem[{Stapert(1976)}]{Stapert1976}
+Stapert, D., 1976. Some natural surface modifications on chert in the
+  {N}etherlands. Palaeohistoria 18, 7--41.
+
+\bibitem[{Texier(2000)}]{Texier2000}
+Texier, J.-P., 2000. {A} propos des processus de formation des sites
+  préhistoriques / {A}bout prehistoric site formation processes. Paléo
+  12~(1), 379--386.
+
+\bibitem[{Tobler(1970)}]{Tobler1970}
+Tobler, W.~R., 1970. A computer movie simulating urban growth in the {D}etroit
+  region. Economic Geography 46~(2), 234--240.
+
+\bibitem[{Toro-Moyano et~al.(2011)Toro-Moyano, Barsky, Cauche, Celiberti,
+  Grégoire, Lebegue, Moncel, and de~Lumley}]{Toro-Moyano2011}
+Toro-Moyano, I., Barsky, D., Cauche, D., Celiberti, V., Grégoire, S., Lebegue,
+  F., Moncel, M.~H., de~Lumley, H., 2011. {T}he archaic stone tool industry
+  from {B}arranco {L}eón and {F}uente {N}ueva 3, ({O}rce, {S}pain): {E}vidence
+  of the earliest hominin presence in southern {E}urope. Quaternary
+  International 243~(1), 80--91.
+
+\bibitem[{Toro-Moyano et~al.(2009)Toro-Moyano, de~Lumley, Fajardo, Barsky,
+  Cauche, Celiberti, Grégoire, Martinez-Navarro, Espigares, and
+  Ros-Montoya}]{Toro-Moyano2009}
+Toro-Moyano, I., de~Lumley, H., Fajardo, B., Barsky, D., Cauche, D., Celiberti,
+  V., Grégoire, S., Martinez-Navarro, B., Espigares, M.~P., Ros-Montoya, S.,
+  2009. L´industrie lithique des gisements du {P}léistocène inférieur de
+  {B}arranco {L}eón et {F}uente {N}ueva 3 à {O}rce, {G}renade, {E}spagne.
+  L'Anthropologie 113~(1), 111--124.
+
+\bibitem[{Toro-Moyano et~al.(2013)Toro-Moyano, Martínez-Navarro, Agustí,
+  Souday, de~Castro, Martinón-Torres, Fajardo, Duval, Falguères, Oms, Parés,
+  Anadón, Julià, García-Aguilar, Moigne, Espigares, Ros-Montoya, and
+  Palmqvist}]{Toro-Moyano2013}
+Toro-Moyano, I., Martínez-Navarro, B., Agustí, J., Souday, C., de~Castro,
+  J.~B., Martinón-Torres, M., Fajardo, B., Duval, M., Falguères, C., Oms, O.,
+  Parés, J., Anadón, P., Julià, R., García-Aguilar, J., Moigne, A.-M.,
+  Espigares, M., Ros-Montoya, S., Palmqvist, P., 2013. The oldest human fossil
+  in {E}urope, from {O}rce ({S}pain). Journal of Human Evolution 65~(1), 1--9.
+
+\bibitem[{Torres et~al.(2003)Torres, Ortiz, and Cobo}]{Torres2003}
+Torres, T., Ortiz, J.~E., Cobo, R., 2003. Features of deep cave sediments:
+  their influence on fossil preservation. Estudios Geologico 59, 195--204.
+
+\bibitem[{Villa(1982)}]{Villa1982}
+Villa, P., 1982. Conjoinable {P}ieces and {S}ite {F}ormation {P}rocesses.
+  American Antiquity 47~(2), 276--290.
+
+\bibitem[{Whallon(1974)}]{Whallon1974}
+Whallon, R.~J., 1974. Spatial analysis of occupation floors ii: The application
+  of nearest neighbor analysis. American Antiquity 39~(1), 16--34.
+
+\bibitem[{White(1976)}]{White1976}
+White, W.~B., 1976. Cave minerals and speleothems. In: Ford, T., Cullingford,
+  C. (Eds.), The Science of Speleology. Academic Press, London, pp. 267--327.
+
+\bibitem[{White et~al.(2009)White, Vito, and Scheetz}]{White2009}
+White, W.~B., Vito, C., Scheetz, B.~E., 2009. The mineralogy and trace element
+  chemistry of black manganese oxide deposits from caves. Journal of Cave and
+  Karst Studies 71~(2), 136--143.
+
+\bibitem[{Wood and Johnson(1978)}]{Wood1978}
+Wood, R.~W., Johnson, D.~L., 1978. A survey of disturbance processes in
+  archaeological site formation. In: Schiffer, M.~B. (Ed.), Advances in
+  archaeological method and theory. Vol.~1. Academic Press, New York, Ch.~9,
+  pp. 315--381.
+
+\end{thebibliography}

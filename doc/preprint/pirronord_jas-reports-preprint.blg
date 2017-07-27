@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/dev/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: pirronord_jas-reports-preprint.aux
+The style file: elsarticle-harv.bst
+Database file #1: pirronord_rr.bib
+You've used 98 entries,
+            2821 wiz_defined-function locations,
+            1288 strings with 25493 characters,
+and the built_in function-call counts, 52994 in all, are:
+= -- 5351
+> -- 2974
+< -- 81
++ -- 1138
+- -- 1014
+* -- 4668
+:= -- 9546
+add.period$ -- 309
+call.type$ -- 98
+change.case$ -- 834
+chr.to.int$ -- 108
+cite$ -- 98
+duplicate$ -- 1825
+empty$ -- 3471
+format.name$ -- 1272
+if$ -- 10628
+int.to.chr$ -- 3
+int.to.str$ -- 1
+missing$ -- 105
+newline$ -- 301
+num.names$ -- 410
+pop$ -- 756
+preamble$ -- 1
+purify$ -- 725
+quote$ -- 0
+skip$ -- 1455
+stack$ -- 0
+substring$ -- 3118
+swap$ -- 278
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 849
+warning$ -- 0
+while$ -- 471
+width$ -- 0
+write$ -- 1092
