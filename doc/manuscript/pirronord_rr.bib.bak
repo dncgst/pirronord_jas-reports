@@ -1,5 +1,4 @@
-% This file was created with JabRef 2.10.
-% Encoding: UTF8
+% Encoding: UTF-8
 
 
 @Article{Anderson2008,
@@ -1375,3 +1374,4 @@
   File                     = {Zunino2012.pdf:science_article/Zunino2012.pdf:PDF}
 }
 
+@Comment{jabref-meta: databaseType:biblatex;}
